@@ -11,12 +11,11 @@ namespace TankGame.Controllers
         #region ------------ Serialize Variables ------------
         [Header("References")]
         [SerializeField] private TankView tankView;
-        [SerializeField] private GunController gunController;
 
         [Header("Fields")]
         [SerializeField] private LayerMask baseLayer;
         [SerializeField] private float maxDistance = 5f;
-        [SerializeField] private float movementDuration = 2f;
+
         #endregion------------------------
 
         #region ------------ Private Variables ------------
@@ -43,8 +42,9 @@ namespace TankGame.Controllers
 
                     if (Physics.Raycast(ray, out rayHit, maxDistance, baseLayer))
                     {
+                        print("Hit");
                         GameManager.instance.SetTankState(TankState.MOVING);
-                        StartCoroutine(MoveTank(rayHit.point));
+                        StartCoroutine(tankView.MoveTank(rayHit.point));
                     }
                 }
             }
@@ -59,25 +59,7 @@ namespace TankGame.Controllers
         #endregion------------------------
 
         #region ------------ Private Methods ------------
-        private IEnumerator MoveTank(Vector3 hitPosition)
-        {
-            if (GameManager.instance.GetTankState() == TankState.MOVING)
-            {
-                Vector3 newPosition = new Vector3(hitPosition.x, 0f, hitPosition.z);
-                float time = 0;
-                while (time < movementDuration)
-                {
-                    tankView.transform.position = Vector3.Lerp(tankView.transform.position, newPosition, time / movementDuration);
-                    time += Time.deltaTime;
-                    yield return null;
-                }
-                tankView.transform.position = newPosition;
-                yield return new WaitForSeconds(1f);
-                gunController.CheckForWall();
-                GameManager.instance.SetTankState(TankState.REST);
-                yield return null;
-            }
-        }
+
         #endregion------------------------
     }
 }
