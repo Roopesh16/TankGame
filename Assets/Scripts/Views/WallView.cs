@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
-using TankGame.Controllers;
+using TankGame.Views;
 using UnityEngine;
+
 
 public class WallView : MonoBehaviour
 {
-    [SerializeField] private GunController gunController;
+    [SerializeField] private GunView gunView;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Bullet")
         {
-            gunController.canFire = false;
-            gameObject.SetActive(false);
+            gunView.canFire = false;
             other.gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 }
