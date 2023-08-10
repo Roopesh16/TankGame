@@ -8,49 +8,56 @@ namespace TankGame.Views
     public class TankView : MonoBehaviour
     {
         #region ------------ Serialize Variables ------------
+        [SerializeField] private Transform startingPosition;
         [SerializeField] private float movementDuration = 2f;
         [SerializeField] private GunView gunView;
         #endregion------------------------
 
         #region ------------ Private Variables ------------
+        private bool canMove = false;
+        private Vector3 hitPosition;
+        private Rigidbody tankRb;
         #endregion------------------------
 
         #region ------------ Public Variables ------------
         #endregion------------------------
 
         #region ------------ Monobehavior Methods ------------
-        void Start()
+        void Awake()
         {
+            tankRb = GetComponent<Rigidbody>();
         }
-
         void Update()
         {
 
+        }
+
+        void FixedUpdate()
+        {
+            if (canMove)
+            {
+                while (transform.position.z <= hitPosition.z)
+                {
+                    tankRb.velocity = new(0, 0, 10f);
+                }
+
+                canMove = false;
+                GameManager.instance.SetTankState(TankState.REST);
+            }
         }
         #endregion------------------------
 
         #region ------------ Public Methods ------------
         public void OnGameStart()
         {
-
+            transform.position = startingPosition.position;
         }
-
-        public IEnumerator MoveTank(Vector3 hitPosition)
+        public void MoveTank(Vector3 hitPosition)
         {
             if (GameManager.instance.GetTankState() == TankState.MOVING)
             {
-                Vector3 newPosition = new Vector3(hitPosition.x, 0f, hitPosition.z);
-                float time = 0;
-                while (time < movementDuration)
-                {
-                    transform.position = Vector3.Lerp(transform.position, newPosition, time / movementDuration);
-                    time += Time.deltaTime;
-                    yield return null;
-                }
-                transform.position = newPosition;
-                gunView.CheckForWall();
-                GameManager.instance.SetTankState(TankState.REST);
-                yield return null;
+                canMove = true;
+                this.hitPosition = hitPosition;
             }
         }
         #endregion------------------------

@@ -42,7 +42,7 @@ namespace TankGame.Controllers
                     if (Physics.Raycast(ray, out rayHit, maxDistance, baseLayer))
                     {
                         GameManager.instance.SetTankState(TankState.MOVING);
-                        StartCoroutine(tankView.MoveTank(rayHit.point));
+                        tankView.MoveTank(rayHit.point);
                     }
                 }
             }
@@ -53,6 +53,7 @@ namespace TankGame.Controllers
         public void OnGameStart()
         {
             GameManager.instance.SetTankState(TankState.REST);
+            tankView.OnGameStart();
         }
         #endregion------------------------
 
