@@ -36,13 +36,10 @@ namespace TankGame.Views
         {
             if (canMove)
             {
-                while (transform.position.z <= hitPosition.z)
-                {
-                    tankRb.velocity = new(0, 0, 10f);
-                }
-
-                canMove = false;
-                GameManager.instance.SetTankState(TankState.REST);
+                Vector3 direction = (hitPosition - transform.position).normalized;
+                tankRb.AddForce(direction * 3, ForceMode.VelocityChange);
+                // canMove = false;
+                // GameManager.instance.SetTankState(TankState.REST);
             }
         }
         #endregion------------------------
@@ -52,6 +49,7 @@ namespace TankGame.Views
         {
             transform.position = startingPosition.position;
         }
+
         public void MoveTank(Vector3 hitPosition)
         {
             if (GameManager.instance.GetTankState() == TankState.MOVING)
