@@ -48,21 +48,19 @@ namespace TankGame.Controllers
             RaycastHit wallHit;
             if (Physics.Raycast(ray, out wallHit, maxWallDistance, wallLayer))
             {
-                canFire = true;
-                GameManager.instance.SetTankState(TankState.FIRE);
-                bullet = Instantiate(bulletPrefab);
-                bullet.transform.position = shootingPoint.position;
-            }
-            else
-            {
-                print("No walls");
-                return;
+                ShootBullet();
             }
         }
         #endregion------------------------
 
         #region ------------ Private Methods ------------
-        private 
+        private void ShootBullet()
+        {
+            canFire = true;
+            GameManager.instance.SetTankState(TankState.FIRE);
+            bullet = Instantiate(bulletPrefab);
+            bullet.transform.position = shootingPoint.position;
+        }
         #endregion------------------------
     }
 }
