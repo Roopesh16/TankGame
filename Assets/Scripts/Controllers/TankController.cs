@@ -12,13 +12,13 @@ namespace TankGame.Controllers
         [SerializeField] private TankView tankView;
 
         [Header("Fields")]
-        [SerializeField] private LayerMask baseLayer;
         [SerializeField] private float maxDistance = 5f;
 
         #endregion------------------------
 
         #region ------------ Private Variables ------------
         private TankState currentTankState;
+        private RaycastHit rayHit;
         #endregion------------------------
 
         #region ------------ Public Variables ------------
@@ -36,13 +36,14 @@ namespace TankGame.Controllers
                 if (Input.GetMouseButtonDown(0) && GameManager.instance.GetTankState() == TankState.REST)
                 {
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                    Debug.DrawRay(ray.origin, ray.direction * 10, Color.red);
-                    RaycastHit rayHit;
 
-                    if (Physics.Raycast(ray, out rayHit, maxDistance, baseLayer))
+                    if (Physics.Raycast(ray, out rayHit, maxDistance))
                     {
-                        GameManager.instance.SetTankState(TankState.MOVING);
-                        tankView.MoveTank(rayHit.point);
+                        if (rayHit.collider.tag == "Base")
+                        {
+                            GameManager.instance.SetTankState(TankState.MOVING);
+                            tankView.MoveTank(rayHit.point);
+                        }
                     }
                 }
             }
