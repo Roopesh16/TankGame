@@ -15,6 +15,7 @@ namespace TankGame.Views
         [Header("Values")]
         [SerializeField] private float movementDuration = 2f;
         [SerializeField] private float tankVelocity = 3f;
+        [SerializeField] private float minimumDistance = 2f;
 
         #endregion------------------------
 
@@ -42,9 +43,17 @@ namespace TankGame.Views
             if (canMove)
             {
                 Vector3 direction = (hitPosition - transform.position).normalized;
-                tankRb.AddForce(direction * tankVelocity, ForceMode.VelocityChange);
-                // canMove = false;
-                // GameManager.instance.SetTankState(TankState.REST);
+                if (Vector3.Distance(hitPosition, transform.position) >= minimumDistance)
+                {
+                    tankRb.AddForce(direction * tankVelocity, ForceMode.VelocityChange);
+                }
+                else
+                {
+                    transform.position = hitPosition;
+                    tankRb.velocity = Vector3.zero;
+                    canMove = false;
+                    GameManager.instance.SetTankState(TankState.REST);
+                }
             }
         }
         #endregion------------------------
