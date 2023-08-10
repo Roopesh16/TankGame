@@ -1,7 +1,6 @@
 using UnityEngine;
 using TankGame.Models;
 using TankGame.Managers;
-using System.Collections;
 
 namespace TankGame.Views
 {
@@ -54,11 +53,6 @@ namespace TankGame.Views
                 bullet = Instantiate(bulletPrefab);
                 bullet.transform.position = shootingPoint.position;
             }
-            // else
-            // {
-            //     print("No walls");
-            //     return;
-            // }
         }
         #endregion------------------------
 

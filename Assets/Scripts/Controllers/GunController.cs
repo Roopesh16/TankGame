@@ -1,7 +1,6 @@
 using UnityEngine;
 using TankGame.Models;
 using TankGame.Managers;
-using System.Collections;
 
 namespace TankGame.Controllers
 {
@@ -63,6 +62,7 @@ namespace TankGame.Controllers
         #endregion------------------------
 
         #region ------------ Private Methods ------------
+        private 
         #endregion------------------------
     }
 }

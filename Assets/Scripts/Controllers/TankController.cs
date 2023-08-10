@@ -2,7 +2,6 @@ using UnityEngine;
 using TankGame.Views;
 using TankGame.Models;
 using TankGame.Managers;
-using System.Collections;
 
 namespace TankGame.Controllers
 {
@@ -42,7 +41,6 @@ namespace TankGame.Controllers
 
                     if (Physics.Raycast(ray, out rayHit, maxDistance, baseLayer))
                     {
-                        print("Hit");
                         GameManager.instance.SetTankState(TankState.MOVING);
                         StartCoroutine(tankView.MoveTank(rayHit.point));
                     }
