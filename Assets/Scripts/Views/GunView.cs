@@ -15,11 +15,13 @@ namespace TankGame.Views
         [Header("Values")]
         [SerializeField] private float maxWallDistance = 10f;
         [SerializeField] private LayerMask wallLayer;
+        [SerializeField] private float bulletSpeed = 10f;
         #endregion------------------------
 
         #region ------------ Private Variables ------------
         private int count = 0;
         private GameObject bullet;
+        private RaycastHit wallHit;
         #endregion------------------------
 
         #region ------------ Public Variables ------------
@@ -36,23 +38,28 @@ namespace TankGame.Views
         {
             if (GameManager.instance.GetTankState() == TankState.FIRE || canFire == true)
             {
-                bullet.transform.Translate(Vector3.forward * 10 * Time.deltaTime);
+                bullet.transform.Translate(Vector3.forward * bulletSpeed * Time.deltaTime);
             }
         }
         #endregion------------------------
 
         #region ------------ Public Methods ------------
-        public void CheckForWall()
+        public bool IsWallPresent()
         {
             Ray ray = new Ray(gun.position, Vector3.forward);
-            RaycastHit wallHit;
             if (Physics.Raycast(ray, out wallHit, maxWallDistance, wallLayer))
             {
-                canFire = true;
-                GameManager.instance.SetTankState(TankState.FIRE);
-                bullet = Instantiate(bulletPrefab);
-                bullet.transform.position = shootingPoint.position;
+                return true;
             }
+
+            return false;
+        }
+        public void FireBullet()
+        {
+            canFire = true;
+            GameManager.instance.SetTankState(TankState.FIRE);
+            bullet = Instantiate(bulletPrefab);
+            bullet.transform.position = shootingPoint.position;
         }
         #endregion------------------------
 
