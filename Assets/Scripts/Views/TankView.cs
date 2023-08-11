@@ -1,6 +1,7 @@
 using System.Collections;
 using TankGame.Managers;
 using TankGame.Models;
+using UnityEngine.AI;
 using UnityEngine;
 
 namespace TankGame.Views
@@ -22,7 +23,7 @@ namespace TankGame.Views
         #region ------------ Private Variables ------------
         private bool canMove = false;
         private Vector3 hitPosition;
-        private Rigidbody tankRb;
+        private NavMeshAgent tankNavMesh;
         #endregion------------------------
 
         #region ------------ Public Variables ------------
@@ -31,30 +32,24 @@ namespace TankGame.Views
         #region ------------ Monobehavior Methods ------------
         void Awake()
         {
-            tankRb = GetComponent<Rigidbody>();
+            tankNavMesh = GetComponent<NavMeshAgent>();
         }
         void Update()
         {
-
-        }
-
-        void FixedUpdate()
-        {
             if (canMove)
             {
-                Vector3 direction = (hitPosition - transform.position).normalized;
-                if (Vector3.Distance(hitPosition, transform.position) >= minimumDistance)
+                tankNavMesh.SetDestination(hitPosition);
+
+                if (Vector3.Distance(hitPosition, transform.position) <= minimumDistance)
                 {
-                    tankRb.AddForce(direction * tankVelocity, ForceMode.VelocityChange);
-                }
-                else
-                {
-                    transform.position = hitPosition;
-                    tankRb.velocity = Vector3.zero;
+                    
+                    tankNavMesh.isStopped = true;
                     canMove = false;
                     GameManager.instance.SetTankState(TankState.REST);
                 }
             }
+
+
         }
         #endregion------------------------
 
@@ -68,6 +63,7 @@ namespace TankGame.Views
         {
             if (GameManager.instance.GetTankState() == TankState.MOVING)
             {
+                tankNavMesh.isStopped = false;
                 canMove = true;
                 this.hitPosition = hitPosition;
                 this.hitPosition.y = 0;
