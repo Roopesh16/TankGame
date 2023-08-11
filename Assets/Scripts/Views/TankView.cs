@@ -42,14 +42,15 @@ namespace TankGame.Views
 
                 if (Vector3.Distance(hitPosition, transform.position) <= minimumDistance)
                 {
-                    
                     tankNavMesh.isStopped = true;
                     canMove = false;
+                    if (gunView.IsWallPresent())
+                    {
+                        gunView.FireBullet();
+                    }
                     GameManager.instance.SetTankState(TankState.REST);
                 }
             }
-
-
         }
         #endregion------------------------
 
