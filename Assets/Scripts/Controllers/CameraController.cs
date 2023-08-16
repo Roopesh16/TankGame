@@ -4,11 +4,12 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] private Transform tank;
+    [SerializeField] private float smoothing;
     private Vector3 offset;
     // Start is called before the first frame update
     void Start()
     {
-
+        offset = transform.position - tank.position;
     }
 
     // Update is called once per frame
@@ -16,7 +17,8 @@ public class CameraController : MonoBehaviour
     {
         if (GameManager.instance.GetTankState() == TankGame.Models.TankState.MOVING)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, tank.transform.position.z);
+            Vector3 targetPosition = tank.position + offset;
+            transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing * Time.deltaTime);
         }
     }
 }
