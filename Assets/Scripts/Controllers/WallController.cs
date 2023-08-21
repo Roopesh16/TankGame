@@ -43,6 +43,7 @@ namespace TankGame.Controllers
         {
             foreach (WallView wall in walls)
             {
+                wall.OnGameStart();
                 wall.gameObject.SetActive(false);
             }
             NextWall();
