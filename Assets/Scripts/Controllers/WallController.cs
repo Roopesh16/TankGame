@@ -10,6 +10,7 @@ namespace TankGame.Controllers
         #region ------------ Serialize Variables ------------
         [SerializeField]
         private List<WallView> walls = new List<WallView>();
+        [SerializeField] private GameController gameController;
         #endregion------------------------
 
         #region ------------ Private Variables ------------
@@ -34,6 +35,10 @@ namespace TankGame.Controllers
             if (currentWall < walls.Count)
             {
                 walls[currentWall].gameObject.SetActive(true);
+            }
+            else
+            {
+                gameController.OnGameOver();
             }
         }
         #endregion------------------------

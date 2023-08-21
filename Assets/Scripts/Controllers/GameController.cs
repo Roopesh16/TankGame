@@ -1,5 +1,6 @@
 using TankGame.Managers;
 using TankGame.Models;
+using TankGame.Views;
 using UnityEngine;
 
 namespace TankGame.Controllers
@@ -9,6 +10,8 @@ namespace TankGame.Controllers
         #region ------------ Serialize Variables ------------
         [SerializeField] private TankController tankController;
         [SerializeField] private WallController wallController;
+
+        [SerializeField] private GameView gameView;
         #endregion------------------------
 
         #region ------------ Private Variables ------------
@@ -30,6 +33,10 @@ namespace TankGame.Controllers
         #endregion------------------------
 
         #region ------------ Public Methods ------------
+        public void OnGameOver()
+        {
+            gameView.OnGameOver();
+        }
         #endregion------------------------
 
         #region ------------ Private Methods ------------

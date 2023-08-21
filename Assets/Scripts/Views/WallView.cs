@@ -10,6 +10,7 @@ namespace TankGame.Views
         [SerializeField] private WallType wallType;
         [SerializeField] private WallModel wallModel;
         [SerializeField] private WallController wallController;
+        [SerializeField] private GameView gameView;
         #endregion------------------------
 
         #region ------------ Private Variables ------------
@@ -34,6 +35,7 @@ namespace TankGame.Views
         {
             if (other.tag == GameStrings.bulletString)
             {
+                gameView.SetScoreText(wallScore);
                 other.gameObject.SetActive(false);
                 gameObject.SetActive(false);
                 wallController.NextWall();
