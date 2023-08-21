@@ -1,5 +1,4 @@
-using System;
-
+using UnityEngine;
 namespace TankGame.Models
 {
     public enum WallType
@@ -8,11 +7,11 @@ namespace TankGame.Models
         MID,
         BIG
     }
-    
-    public class WallModel
+
+    public class WallModel : MonoBehaviour
     {
-        public int smallWallPoint = 5;
-        public int midWallPoint = 10;
-        public int bigWallPoint = 15;
+        [HideInInspector] public int smallWallPoint = 5;
+        [HideInInspector] public int midWallPoint = 10;
+        [HideInInspector] public int bigWallPoint = 15;
     }
 }
