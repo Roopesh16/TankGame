@@ -29,11 +29,6 @@ namespace TankGame.Views
         #endregion------------------------
 
         #region ------------ Monobehavior Methods ------------
-        void Start()
-        {
-
-        }
-
         void Update()
         {
             if (GameManager.instance.GetTankState() == TankState.FIRE || canFire == true)
@@ -57,7 +52,6 @@ namespace TankGame.Views
         public void FireBullet()
         {
             canFire = true;
-            GameManager.instance.SetTankState(TankState.FIRE);
             bullet = Instantiate(bulletPrefab);
             bullet.transform.position = shootingPoint.position;
         }

@@ -46,6 +46,7 @@ namespace TankGame.Views
                     canMove = false;
                     if (gunView.IsWallPresent())
                     {
+                        GameManager.instance.SetTankState(TankState.FIRE);
                         gunView.FireBullet();
                     }
                     GameManager.instance.SetTankState(TankState.REST);
