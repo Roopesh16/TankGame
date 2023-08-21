@@ -1,5 +1,6 @@
 using UnityEngine;
 using TankGame.Models;
+using TankGame.Controllers;
 
 namespace TankGame.Views
 {
@@ -8,6 +9,7 @@ namespace TankGame.Views
         #region ------------ Serialize Variables ------------
         [SerializeField] private WallType wallType;
         [SerializeField] private WallModel wallModel;
+        [SerializeField] private WallController wallController;
         #endregion------------------------
 
         #region ------------ Private Variables ------------
@@ -34,6 +36,7 @@ namespace TankGame.Views
             {
                 other.gameObject.SetActive(false);
                 gameObject.SetActive(false);
+                wallController.NextWall();
             }
         }
 

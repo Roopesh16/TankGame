@@ -398,6 +398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallType: 1
   wallModel: {fileID: 914020803}
+  wallController: {fileID: 1492132040}
 --- !u!65 &86126886
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -510,6 +511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallType: 2
   wallModel: {fileID: 914020803}
+  wallController: {fileID: 1492132040}
 --- !u!65 &143864687
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1302,6 +1304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallType: 0
   wallModel: {fileID: 914020803}
+  wallController: {fileID: 1492132040}
 --- !u!65 &1298404216
 BoxCollider:
   m_ObjectHideFlags: 0
