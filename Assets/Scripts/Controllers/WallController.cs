@@ -23,16 +23,19 @@ namespace TankGame.Controllers
         #region ------------ Public Methods ------------
         public void OnGameStart()
         {
-            SpawnWall();
+            DisableAllWalls();
         }
         #endregion------------------------
 
         #region ------------ Private Methods ------------
-        private void SpawnWall()
+        private void DisableAllWalls()
         {
-
+            foreach (WallView wall in walls)
+            {
+                wall.gameObject.SetActive(false);
+            }
+            #endregion------------------------
         }
-        #endregion------------------------
-    }
 
+    }
 }

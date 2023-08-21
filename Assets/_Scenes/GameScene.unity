@@ -1435,7 +1435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tankController: {fileID: 964530544}
-  wallController: {fileID: 0}
+  wallController: {fileID: 1492132040}
 --- !u!1 &1950290937
 GameObject:
   m_ObjectHideFlags: 0
