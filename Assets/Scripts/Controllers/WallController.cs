@@ -1,14 +1,14 @@
-using TankGame.Managers;
-using TankGame.Models;
 using UnityEngine;
+using System.Collections.Generic;
+using TankGame.Views;
 
 namespace TankGame.Controllers
 {
-    public class GameController : MonoBehaviour
+    public class WallController : MonoBehaviour
     {
         #region ------------ Serialize Variables ------------
-        [SerializeField] private TankController tankController;
-        [SerializeField] private WallController wallController;
+        [SerializeField]
+        private List<WallView> walls = new List<WallView>();
         #endregion------------------------
 
         #region ------------ Private Variables ------------
@@ -18,27 +18,21 @@ namespace TankGame.Controllers
         #endregion------------------------
 
         #region ------------ Monobehavior Methods ------------
-        void Start()
-        {
-            OnGameStart();
-        }
-
-        void Update()
-        {
-
-        }
         #endregion------------------------
 
         #region ------------ Public Methods ------------
+        public void OnGameStart()
+        {
+            SpawnWall();
+        }
         #endregion------------------------
 
         #region ------------ Private Methods ------------
-        private void OnGameStart()
+        private void SpawnWall()
         {
-            GameManager.instance.SetGameState(GameState.PLAY);
-            tankController.OnGameStart();
-            wallController.OnGameStart();
+
         }
         #endregion------------------------
     }
+
 }
