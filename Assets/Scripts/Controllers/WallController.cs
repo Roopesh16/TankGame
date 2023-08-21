@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TankGame.Views;
+using System.Security.Cryptography;
 
 namespace TankGame.Controllers
 {
@@ -12,6 +13,7 @@ namespace TankGame.Controllers
         #endregion------------------------
 
         #region ------------ Private Variables ------------
+        private int currentWall = -1;
         #endregion------------------------
 
         #region ------------ Public Variables ------------
@@ -25,6 +27,15 @@ namespace TankGame.Controllers
         {
             DisableAllWalls();
         }
+
+        public void NextWall()
+        {
+            currentWall++;
+            if (currentWall < walls.Count)
+            {
+                walls[currentWall].gameObject.SetActive(true);
+            }
+        }
         #endregion------------------------
 
         #region ------------ Private Methods ------------
@@ -34,8 +45,8 @@ namespace TankGame.Controllers
             {
                 wall.gameObject.SetActive(false);
             }
-            #endregion------------------------
+            NextWall();
         }
-
+        #endregion------------------------
     }
 }
