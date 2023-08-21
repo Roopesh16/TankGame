@@ -30,7 +30,7 @@ namespace TankGame.Views
         #region ------------ Private Methods ------------
         private void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "Bullet")
+            if (other.tag == GameStrings.bulletString)
             {
                 other.gameObject.SetActive(false);
                 gameObject.SetActive(false);
@@ -51,8 +51,6 @@ namespace TankGame.Views
                     wallScore = wallModel.bigWallPoint;
                     break;
             }
-
-            print(wallScore);
         }
         #endregion------------------------
     }
