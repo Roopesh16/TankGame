@@ -8,7 +8,6 @@ namespace TankGame.Views
     {
         #region ------------ Serialize Variables ------------
         [Header("References")]
-        [SerializeField] private Transform gun;
         [SerializeField] private Transform shootingPoint;
         [SerializeField] private GameObject bulletPrefab;
 
@@ -41,7 +40,7 @@ namespace TankGame.Views
         #region ------------ Public Methods ------------
         public bool IsWallPresent()
         {
-            Ray ray = new Ray(gun.position, Vector3.forward);
+            Ray ray = new Ray(transform.position, Vector3.forward);
             if (Physics.Raycast(ray, out wallHit, maxWallDistance, wallLayer))
             {
                 return true;
