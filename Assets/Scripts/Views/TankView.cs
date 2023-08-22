@@ -2,6 +2,7 @@ using TankGame.Managers;
 using TankGame.Models;
 using UnityEngine.AI;
 using UnityEngine;
+using UnityEngine.Timeline;
 
 namespace TankGame.Views
 {
@@ -23,6 +24,7 @@ namespace TankGame.Views
         private bool canMove = false;
         private Vector3 hitPosition;
         private NavMeshAgent tankNavMesh;
+        private Animator tankAnim;
         #endregion------------------------
 
         #region ------------ Public Variables ------------
@@ -32,6 +34,7 @@ namespace TankGame.Views
         void Awake()
         {
             tankNavMesh = GetComponent<NavMeshAgent>();
+            tankAnim = GetComponent<Animator>();
         }
         void Update()
         {
@@ -48,6 +51,7 @@ namespace TankGame.Views
                         GameManager.instance.SetTankState(TankState.FIRE);
                         gunView.FireBullet();
                     }
+                    tankAnim.SetBool("IsMove", false);
                     GameManager.instance.SetTankState(TankState.REST);
                 }
             }
@@ -57,6 +61,7 @@ namespace TankGame.Views
         #region ------------ Public Methods ------------
         public void OnGameStart()
         {
+            tankAnim.SetBool("IsMove", false);
             transform.localPosition = startingPosition.position;
         }
 
@@ -68,6 +73,7 @@ namespace TankGame.Views
                 canMove = true;
                 this.hitPosition = hitPosition;
                 this.hitPosition.y = 0;
+                tankAnim.SetBool("IsMove", true);
             }
         }
         #endregion------------------------
