@@ -2096,6 +2096,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1993562311, guid: 490f0ac7897da974780edf3173c56f0b, type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 1692713973}
     - target: {fileID: 7143748391051270437, guid: 490f0ac7897da974780edf3173c56f0b,
         type: 3}
       propertyPath: m_Name
@@ -2124,7 +2128,7 @@ PrefabInstance:
     - target: {fileID: 7940025101717483715, guid: 490f0ac7897da974780edf3173c56f0b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -23.56969
+      value: -7.68
       objectReference: {fileID: 0}
     - target: {fileID: 7940025101717483715, guid: 490f0ac7897da974780edf3173c56f0b,
         type: 3}

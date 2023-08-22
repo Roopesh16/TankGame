@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using TankGame.Managers;
 
 namespace TankGame.Views
 {
@@ -32,7 +31,6 @@ namespace TankGame.Views
         public void OnGameOver()
         {
             gameOver.SetActive(true);
-            GameManager.instance.SetGameState(Models.GameState.GAMEOVER);
         }
         #endregion------------------------
 

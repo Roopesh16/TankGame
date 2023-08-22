@@ -29,6 +29,7 @@ namespace TankGame.Controllers
         #region ------------ Public Methods ------------
         public void OnGameOver()
         {
+            GameManager.instance.SetGameState(Models.GameState.GAMEOVER);
             gameView.OnGameOver();
         }
         #endregion------------------------
