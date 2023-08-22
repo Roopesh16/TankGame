@@ -52,6 +52,7 @@ namespace TankGame.Views
                         gunView.FireBullet();
                     }
                     tankAnim.SetBool("IsMove", false);
+                    AudioManager.instance.PlayBGM(AudioBGM.TANK_IDLE, 0.8f);
                     GameManager.instance.SetTankState(TankState.REST);
                 }
             }
@@ -61,6 +62,7 @@ namespace TankGame.Views
         #region ------------ Public Methods ------------
         public void OnGameStart()
         {
+            AudioManager.instance.PlayBGM(AudioBGM.TANK_IDLE, 0.8f);
             tankAnim.SetBool("IsMove", false);
             transform.localPosition = startingPosition.position;
         }
@@ -73,6 +75,7 @@ namespace TankGame.Views
                 canMove = true;
                 this.hitPosition = hitPosition;
                 this.hitPosition.y = 0;
+                AudioManager.instance.PlayBGM(AudioBGM.TANK_MOVE, 0.15f);
                 tankAnim.SetBool("IsMove", true);
             }
         }
