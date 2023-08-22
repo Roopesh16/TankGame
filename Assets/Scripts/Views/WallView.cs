@@ -1,5 +1,6 @@
 using UnityEngine;
 using TankGame.Models;
+using TankGame.Managers;
 using TankGame.Controllers;
 
 namespace TankGame.Views
@@ -35,6 +36,7 @@ namespace TankGame.Views
         {
             if (other.tag == GameStrings.bulletString)
             {
+                AudioManager.instance.PlaySFX(AudioSFX.WALL_BREAK, 0.5f);
                 gameView.SetScoreText(wallScore);
                 other.gameObject.SetActive(false);
                 gameObject.SetActive(false);

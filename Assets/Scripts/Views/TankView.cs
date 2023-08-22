@@ -1,8 +1,7 @@
-using TankGame.Managers;
-using TankGame.Models;
-using UnityEngine.AI;
 using UnityEngine;
-using UnityEngine.Timeline;
+using UnityEngine.AI;
+using TankGame.Models;
+using TankGame.Managers;
 
 namespace TankGame.Views
 {

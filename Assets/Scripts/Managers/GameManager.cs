@@ -1,5 +1,5 @@
-using TankGame.Models;
 using UnityEngine;
+using TankGame.Models;
 
 namespace TankGame.Managers
 {
