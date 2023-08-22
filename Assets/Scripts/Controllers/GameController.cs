@@ -10,7 +10,6 @@ namespace TankGame.Controllers
         #region ------------ Serialize Variables ------------
         [SerializeField] private TankController tankController;
         [SerializeField] private WallController wallController;
-
         [SerializeField] private GameView gameView;
         #endregion------------------------
 
@@ -24,11 +23,6 @@ namespace TankGame.Controllers
         void Start()
         {
             OnGameStart();
-        }
-
-        void Update()
-        {
-
         }
         #endregion------------------------
 
