@@ -25,10 +25,6 @@ namespace TankGame.Controllers
         #endregion------------------------
 
         #region ------------ Monobehavior Methods ------------
-        void Start()
-        {
-        }
-
         void Update()
         {
             if (GameManager.instance.GetGameState() == GameState.PLAY)

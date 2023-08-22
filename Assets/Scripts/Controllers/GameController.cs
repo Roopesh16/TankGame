@@ -1,7 +1,7 @@
-using TankGame.Managers;
-using TankGame.Models;
-using TankGame.Views;
 using UnityEngine;
+using TankGame.Views;
+using TankGame.Models;
+using TankGame.Managers;
 
 namespace TankGame.Controllers
 {

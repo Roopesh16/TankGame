@@ -1,7 +1,6 @@
 using UnityEngine;
-using System.Collections.Generic;
 using TankGame.Views;
-using System.Security.Cryptography;
+using System.Collections.Generic;
 
 namespace TankGame.Controllers
 {
