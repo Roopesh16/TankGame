@@ -14,7 +14,7 @@ namespace TankGame.Controllers
         #endregion------------------------
 
         #region ------------ Private Variables ------------
-        private int currentWall = -1;
+        private int currentWall = 0;
         #endregion------------------------
 
         #region ------------ Public Variables ------------
@@ -26,17 +26,13 @@ namespace TankGame.Controllers
         #region ------------ Public Methods ------------
         public void OnGameStart()
         {
-            DisableAllWalls();
+            InitiateAllWalls();
         }
 
         public void NextWall()
         {
             currentWall++;
-            if (currentWall < walls.Count)
-            {
-                walls[currentWall].gameObject.SetActive(true);
-            }
-            else
+            if (currentWall >= walls.Count)
             {
                 gameController.OnGameOver();
             }
@@ -44,14 +40,12 @@ namespace TankGame.Controllers
         #endregion------------------------
 
         #region ------------ Private Methods ------------
-        private void DisableAllWalls()
+        private void InitiateAllWalls()
         {
             foreach (WallView wall in walls)
             {
                 wall.OnGameStart();
-                wall.gameObject.SetActive(false);
             }
-            NextWall();
         }
         #endregion------------------------
     }
