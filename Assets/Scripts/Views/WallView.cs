@@ -46,17 +46,20 @@ namespace TankGame.Views
 
         private void SetWallScore()
         {
-            switch (wallType)
+            if (wallType != null)
             {
-                case WallType.SMALL:
-                    wallScore = wallModel.smallWallPoint;
-                    break;
-                case WallType.MID:
-                    wallScore = wallModel.midWallPoint;
-                    break;
-                case WallType.BIG:
-                    wallScore = wallModel.bigWallPoint;
-                    break;
+                switch (wallType)
+                {
+                    case WallType.SMALL:
+                        wallScore = wallModel.smallWallPoint;
+                        break;
+                    case WallType.MID:
+                        wallScore = wallModel.midWallPoint;
+                        break;
+                    case WallType.BIG:
+                        wallScore = wallModel.bigWallPoint;
+                        break;
+                }
             }
         }
         #endregion------------------------
