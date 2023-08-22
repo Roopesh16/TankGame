@@ -53,6 +53,7 @@ namespace TankGame.Views
             canFire = true;
             bullet = Instantiate(bulletPrefab);
             bullet.transform.position = shootingPoint.position;
+            AudioManager.instance.PlaySFX(AudioSFX.TANK_SHOT, 0.5f);
         }
         #endregion------------------------
 
