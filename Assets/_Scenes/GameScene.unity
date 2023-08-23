@@ -316,8 +316,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.3629289, y: 1, z: 1}
-  m_Center: {x: 0.6814647, y: 0, z: -8.202797e-17}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &86126887
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -338,7 +338,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1d68d3d4ec941694bb3559dd24152e03, type: 2}
+  - {fileID: 2100000, guid: 80a5349e332678941808064e237eaff8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -376,8 +376,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86126884}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.4, y: 2.56, z: -0.72}
-  m_LocalScale: {x: 1, y: 4.4544134, z: 11.682557}
+  m_LocalPosition: {x: -0.4, y: 2.56, z: 5}
+  m_LocalScale: {x: 1, y: 4.4544134, z: 11.729287}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 995919109}
@@ -447,8 +447,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.3629289, y: 1, z: 1}
-  m_Center: {x: 0.6814647, y: 0, z: -8.202797e-17}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &143864688
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -469,7 +469,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4871d524fd2d8f245be23c629df3665f, type: 2}
+  - {fileID: 2100000, guid: e6fcb0aa5cee3e84d84f5a7bbd970abf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -507,8 +507,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143864685}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.4, y: 3, z: 12.58}
-  m_LocalScale: {x: 1, y: 5.726185, z: 11.682557}
+  m_LocalPosition: {x: -0.4, y: 3.26, z: 21.41}
+  m_LocalScale: {x: 1, y: 5.726185, z: 12.891831}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 995919109}
@@ -2593,7 +2593,7 @@ Transform:
   m_GameObject: {fileID: 1298404213}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0.4, y: 2.14, z: -17.02}
-  m_LocalScale: {x: 1, y: 3.4999588, z: 11.682557}
+  m_LocalScale: {x: 1, y: 3.4999588, z: 13.582141}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 995919109}
@@ -2626,8 +2626,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.3209927, y: 1, z: 1}
-  m_Center: {x: 0.6604966, y: 0, z: 2.1569323e-17}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1298404217
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2648,14 +2648,14 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 997485f9f0b63664ca7b43ba267e0d6b, type: 2}
+  - {fileID: 2100000, guid: 914ab3689e3f97445a0c05b701f3e48d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
+  m_ScaleInLightmap: 0
   m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
@@ -2665,7 +2665,7 @@ MeshRenderer:
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
+  m_LightmapParameters: {fileID: 15204, guid: 0000000000000000f000000000000000, type: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
