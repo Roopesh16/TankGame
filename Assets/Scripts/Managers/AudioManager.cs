@@ -80,6 +80,18 @@ namespace TankGame.Managers
             bgmSource.volume = volume;
             bgmSource.Play();
         }
+
+        public void SetBGMMute()
+        {
+            if (bgmSource.mute == false)
+            {
+                bgmSource.mute = true;
+            }
+            else
+            {
+                bgmSource.mute = true;
+            }
+        }
         #endregion------------------------
 
         #region ------------ Private Methods ------------
