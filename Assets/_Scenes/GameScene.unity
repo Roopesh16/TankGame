@@ -575,12 +575,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sfxList:
-  - {fileID: 8300000, guid: 59895c4c8620a284284943dea0972845, type: 3}
-  - {fileID: 8300000, guid: aab9c2bdafd5fe44d81186c9181434b2, type: 3}
-  - {fileID: 8300000, guid: a0038388247e65a4a858ada5364b27c2, type: 3}
+  - {fileID: 8300000, guid: f0aa22f7bdf0db14181589bd66a8cb50, type: 3}
+  - {fileID: 8300000, guid: 7d50917577e553c4f94854c664f73b3b, type: 3}
+  - {fileID: 8300000, guid: 6fae5fd2f8e8fa544a024453c33ff266, type: 3}
   bgmList:
-  - {fileID: 8300000, guid: e3356fbf02a1f7a43a63b9457def440a, type: 3}
-  - {fileID: 8300000, guid: 1dfbe18d44a79944a8578f15e8183570, type: 3}
+  - {fileID: 8300000, guid: 53a8064a6f0075e419a4f88b810029a6, type: 3}
+  - {fileID: 8300000, guid: 8bf71ed45b232154abb3034a01b7216a, type: 3}
 --- !u!1 &260181302
 GameObject:
   m_ObjectHideFlags: 0
