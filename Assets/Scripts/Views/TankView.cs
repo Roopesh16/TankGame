@@ -11,6 +11,8 @@ namespace TankGame.Views
         [Header("References")]
         [SerializeField] private Transform startingPosition;
         [SerializeField] private GunView gunView;
+        [SerializeField] private Transform blastPosition;
+        [SerializeField] private GameObject blastPrefab;
 
         [Header("Values")]
         [SerializeField] private float movementDuration = 2f;
@@ -77,6 +79,13 @@ namespace TankGame.Views
                 AudioManager.instance.PlayBGM(AudioBGM.TANK_MOVE, 0.15f);
                 tankAnim.SetBool("IsMove", true);
             }
+        }
+
+        public void PlayBlast()
+        {
+            GameObject blast = Instantiate(blastPrefab);
+            blast.transform.position = blastPosition.position;
+            blast.GetComponent<ParticleSystem>().Play();
         }
         #endregion------------------------
 
