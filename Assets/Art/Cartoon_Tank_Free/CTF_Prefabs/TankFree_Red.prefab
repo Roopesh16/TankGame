@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1391653309}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ShootingPoint
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
@@ -23,9 +23,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1391653308}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.23000011, y: 0.72236204, z: 4.7404313}
-  m_LocalScale: {x: 0.90791905, y: 0.37587842, z: 0.28697506}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.8973}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4083431937752462153}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 3631182569085828574}
   - component: {fileID: 6603361179781189605}
   - component: {fileID: 8207418915925417895}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TankFree_Wheel_b_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,8 +56,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134135820838050696}
-  m_LocalRotation: {x: -7.137552e-15, y: 0.000000087422784, z: -0.00000008742279,
-    w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.78152126, y: -0.3376054, z: -0.57228816}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -126,7 +125,7 @@ GameObject:
   - component: {fileID: 2063947290855744239}
   - component: {fileID: 3463857935435935094}
   - component: {fileID: 5139572866538866116}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TankFree_Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +210,8 @@ GameObject:
   - component: {fileID: 4419567447973695573}
   - component: {fileID: 2577482948572295523}
   - component: {fileID: 841751080}
-  m_Layer: 0
+  - component: {fileID: 841751081}
+  m_Layer: 2
   m_Name: TankGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,6 +298,27 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5981544062969976662, guid: 3d210b2be9d4b9144b53828dfc2e73e3, type: 3}
+--- !u!114 &841751081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2902709897703358072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 700d36cdc47365e4cbd92d4ccae08ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootingPoint: {fileID: 1391653309}
+  bulletPrefab: {fileID: 8362787410197010642, guid: 08338119ba0c943449889713a3e36f21,
+    type: 3}
+  maxWallDistance: 7
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  bulletSpeed: 10
+  canFire: 0
 --- !u!1 &3503318476722469206
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,9 +333,11 @@ GameObject:
   - component: {fileID: 697786827}
   - component: {fileID: 697786831}
   - component: {fileID: 697786832}
-  m_Layer: 0
+  - component: {fileID: 697786834}
+  - component: {fileID: 697786833}
+  m_Layer: 2
   m_Name: TankFree_Red
-  m_TagString: Untagged
+  m_TagString: Tank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -328,7 +351,7 @@ Transform:
   m_GameObject: {fileID: 3503318476722469206}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4419001, y: 1.4419001, z: 1.4419}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2063947290855744239}
@@ -414,8 +437,8 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -432,10 +455,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingPosition: {fileID: 0}
-  gunView: {fileID: 0}
+  gunView: {fileID: 841751081}
   movementDuration: 2
   tankVelocity: 3
   minimumDistance: 2
+--- !u!95 &697786834
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3503318476722469206}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3866b75145233694a82c2050ed089ba6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!195 &697786833
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3503318476722469206}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 1.64
+  m_Speed: 7
+  m_Acceleration: 8
+  avoidancePriority: 1
+  m_AngularSpeed: 1
+  m_StoppingDistance: 2
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.5
+  m_BaseOffset: 0.64
+  m_WalkableMask: 1
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &3745786531496338126
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,7 +512,7 @@ GameObject:
   - component: {fileID: 3312167451838146087}
   - component: {fileID: 2582761013081684708}
   - component: {fileID: 7409220747806113731}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TankFree_Wheel_f_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -531,7 +596,7 @@ GameObject:
   - component: {fileID: 9177045630194580144}
   - component: {fileID: 7941413351552715582}
   - component: {fileID: 6726093497014336210}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TankFree_Wheel_b_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +679,7 @@ GameObject:
   - component: {fileID: 301532880387059874}
   - component: {fileID: 208408940938093818}
   - component: {fileID: 2868187183817814119}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TankFree_Wheel_f_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
