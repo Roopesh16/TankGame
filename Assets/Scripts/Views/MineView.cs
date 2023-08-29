@@ -17,7 +17,7 @@ public class MineView : MonoBehaviour
             other.gameObject.SetActive(false);
             AudioManager.instance.PlaySFX(AudioSFX.MINE_EXPLODE, 0.5f);
             gameController.OnGameOver();
-            this.gameObject.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
     #endregion------------------------
