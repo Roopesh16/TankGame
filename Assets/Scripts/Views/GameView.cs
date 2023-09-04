@@ -8,6 +8,7 @@ namespace TankGame.Views
         #region ------------ Serialize Variables ------------
         [SerializeField] private TextMeshProUGUI scoreText;
         [SerializeField] private GameObject gameOver;
+        [SerializeField] private GameObject mineInfo;
         #endregion------------------------
 
         #region ------------ Private Variables ------------
@@ -28,6 +29,20 @@ namespace TankGame.Views
             scoreText.text = "Score : " + totalScore;
         }
 
+        public void DisplayMineInfo()
+        {
+            mineInfo.SetActive(true);
+        }
+
+        public void HideMineInfo()
+        {
+            mineInfo.SetActive(false);
+        }
+
+        public void OnGameStart()
+        {
+            mineInfo.SetActive(false);
+        }
         public void OnGameOver()
         {
             gameOver.SetActive(true);
