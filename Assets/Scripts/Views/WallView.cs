@@ -40,6 +40,10 @@ namespace TankGame.Views
                 gameView.SetScoreText(wallScore);
                 other.gameObject.SetActive(false);
                 gameObject.SetActive(false);
+                if (wallType == WallType.SMALL)
+                {
+                    wallController.DisplayMineInfo();
+                }
                 wallController.NextWall();
             }
         }

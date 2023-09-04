@@ -10,6 +10,7 @@ namespace TankGame.Controllers
         [SerializeField]
         private List<WallView> walls = new List<WallView>();
         [SerializeField] private GameController gameController;
+        [SerializeField] private CameraController cameraController;
         #endregion------------------------
 
         #region ------------ Private Variables ------------
@@ -35,6 +36,10 @@ namespace TankGame.Controllers
             {
                 gameController.OnGameOver();
             }
+        }
+        public void DisplayMineInfo()
+        {
+            gameController.ShowMineInfo();
         }
         #endregion------------------------
 

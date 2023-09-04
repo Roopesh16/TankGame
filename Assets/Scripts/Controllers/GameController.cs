@@ -10,6 +10,7 @@ namespace TankGame.Controllers
         #region ------------ Serialize Variables ------------
         [SerializeField] private TankController tankController;
         [SerializeField] private WallController wallController;
+        [SerializeField] private CameraController cameraController;
         [SerializeField] private GameView gameView;
         #endregion------------------------
 
@@ -29,9 +30,23 @@ namespace TankGame.Controllers
         #region ------------ Public Methods ------------
         public void OnGameOver()
         {
-            GameManager.instance.SetGameState(Models.GameState.GAMEOVER);
+            GameManager.instance.SetGameState(GameState.GAMEOVER);
             AudioManager.instance.SetBGMMute();
             gameView.OnGameOver();
+        }
+
+        public void ShowMineInfo()
+        {
+            GameManager.instance.SetTankState(TankState.DISABLE);
+            StartCoroutine(cameraController.MoveCamera());
+            gameView.DisplayMineInfo();
+        }
+
+        public void HideMineInfo()
+        {
+            StartCoroutine(cameraController.ResetCamera());
+            gameView.HideMineInfo();
+            GameManager.instance.SetTankState(TankState.REST);
         }
         #endregion------------------------
 
@@ -39,6 +54,7 @@ namespace TankGame.Controllers
         private void OnGameStart()
         {
             GameManager.instance.SetGameState(GameState.PLAY);
+            gameView.OnGameStart();
             tankController.OnGameStart();
             wallController.OnGameStart();
         }
