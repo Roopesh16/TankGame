@@ -1,24 +1,62 @@
 using UnityEngine;
 using TankGame.Managers;
+using System.Collections.Generic;
+using System.Collections;
 
-public class CameraController : MonoBehaviour
+namespace TankGame.Controllers
 {
-    [SerializeField] private Transform tank;
-    [SerializeField] private float smoothing;
-    private Vector3 offset;
-    // Start is called before the first frame update
-    void Start()
+    public class CameraController : MonoBehaviour
     {
-        offset = transform.position - tank.position;
-    }
+        #region ------------ Serialized Variables ------------
+        [SerializeField] private Transform tank;
+        [SerializeField] private float smoothing;
+        [SerializeField] private Transform finalCamPosition;
+        [SerializeField] private float movementTime = 2f;
+        #endregion------------------------
+        #region ------------ Private Variables ------------
+        private Vector3 offset;
+        private Vector3 currentCamPosition;
+        #endregion------------------------
 
-    // Update is called once per frame
-    void LateUpdate()
-    {
-        if (GameManager.instance.GetTankState() == TankGame.Models.TankState.MOVING)
+        #region ------------ Monobehavior Methods ------------
+        void Start()
         {
-            Vector3 targetPosition = tank.position + offset;
-            transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing * Time.deltaTime);
+            offset = transform.position - tank.position;
         }
+        void LateUpdate()
+        {
+            if (GameManager.instance.GetTankState() == TankGame.Models.TankState.MOVING)
+            {
+                Vector3 targetPosition = tank.position + offset;
+                transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing * Time.deltaTime);
+            }
+        }
+        #endregion------------------------
+
+        #region ------------ Public Methods ------------
+        public IEnumerator MoveCamera()
+        {
+            float time = 0f;
+            currentCamPosition = transform.position;
+            while (time <= movementTime)
+            {
+                time += Time.deltaTime;
+                transform.position = Vector3.Lerp(currentCamPosition, finalCamPosition.position, time);
+                yield return null;
+            }
+            transform.position = finalCamPosition.position;
+        }
+        public IEnumerator ResetCamera()
+        {
+            float time = 0f;
+            while (time <= movementTime)
+            {
+                time += Time.deltaTime;
+                transform.position = Vector3.Lerp(finalCamPosition.position, currentCamPosition, time);
+                yield return null;
+            }
+            transform.position = currentCamPosition;
+        }
+        #endregion------------------------
     }
 }
