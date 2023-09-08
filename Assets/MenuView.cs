@@ -16,18 +16,40 @@ namespace TankGame.Views
         [Header("UI")]
         [SerializeField] private GameObject titleScreen;
         [SerializeField] private GameObject menuScreen;
+        [SerializeField] private Button playButton;
+        [SerializeField] private List<Button> levelButtons = new List<Button>();
         #endregion------------------------
 
+        #region ------------ Monobehavior Methods ------------
         private void Awake()
+        {
+            playButton.onClick.AddListener(PlayButton);
+            foreach (Button level in levelButtons)
+            {
+                level.onClick.AddListener(LoadScene);
+            }
+
+        }
+
+        private void Start()
         {
             titleScreen.SetActive(true);
             menuScreen.SetActive(false);
         }
+        #endregion ------------------------
 
-        public void PlayButton()
+        #region ------------ Private Methods ------------
+
+        private void PlayButton()
         {
             titleScreen.SetActive(false);
             menuScreen.SetActive(true);
         }
+
+        private void LoadScene()
+        {
+            SceneManager.LoadScene(levelScenes[0].name);
+        }
+        #endregion ------------------------
     }
 }
