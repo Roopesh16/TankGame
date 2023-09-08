@@ -343,19 +343,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 326519453}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1618612350}
-        m_TargetAssemblyTypeName: TankGame.Views.MenuView, Assembly-CSharp
-        m_MethodName: PlayButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &326519453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3478,6 +3466,18 @@ MonoBehaviour:
   - {fileID: 102900000, guid: cdad794905b78744ba80a862d372d311, type: 3}
   titleScreen: {fileID: 1645524765}
   menuScreen: {fileID: 909729529}
+  playButton: {fileID: 326519452}
+  levelButtons:
+  - {fileID: 728364232}
+  - {fileID: 1405119571}
+  - {fileID: 701412541}
+  - {fileID: 642615022}
+  - {fileID: 1252009473}
+  - {fileID: 2138193863}
+  - {fileID: 387507814}
+  - {fileID: 1463927239}
+  - {fileID: 951951490}
+  - {fileID: 476240008}
 --- !u!1 &1623003048
 GameObject:
   m_ObjectHideFlags: 0
