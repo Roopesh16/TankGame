@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using TankGame.Models;
 using TankGame.Managers;
+using TankGame.Controllers;
 
 namespace TankGame.Views
 {
@@ -13,6 +14,7 @@ namespace TankGame.Views
         [SerializeField] private GunView gunView;
         [SerializeField] private Transform blastPosition;
         [SerializeField] private GameObject blastPrefab;
+        [SerializeField] private GameController gameController;
 
         [Header("Values")]
         [SerializeField] private float movementDuration = 2f;
@@ -86,10 +88,15 @@ namespace TankGame.Views
             GameObject blast = Instantiate(blastPrefab);
             blast.transform.position = blastPosition.position;
             blast.GetComponent<ParticleSystem>().Play();
+            Invoke("GameOver", blast.GetComponent<ParticleSystem>().main.duration);
         }
         #endregion------------------------
 
         #region ------------ Private Methods ------------
+        private void GameOver()
+        {
+            gameController.OnGameOver();
+        }
         #endregion------------------------
     }
 }
