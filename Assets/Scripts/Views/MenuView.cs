@@ -1,8 +1,8 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
-using UnityEditor;
 
 namespace TankGame.Views
 {
@@ -24,11 +24,10 @@ namespace TankGame.Views
         private void Awake()
         {
             playButton.onClick.AddListener(PlayButton);
-            foreach (Button level in levelButtons)
+            for (int i = 0; i < levelButtons.Count; i++)
             {
-                level.onClick.AddListener(LoadScene);
+                levelButtons[i].onClick.AddListener(LoadScene);
             }
-
         }
 
         private void Start()
