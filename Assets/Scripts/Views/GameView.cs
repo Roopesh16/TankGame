@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-
+using TankGame.Managers;
 namespace TankGame.Views
 {
     public class GameView : MonoBehaviour

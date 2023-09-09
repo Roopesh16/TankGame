@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using System.Threading.Tasks;
+using UnityEngine.SceneManagement;
 
 namespace TankGame.Managers
 {
