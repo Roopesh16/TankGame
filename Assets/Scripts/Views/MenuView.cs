@@ -1,8 +1,8 @@
-using UnityEditor;
+using TMPro;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 
 namespace TankGame.Views
 {
@@ -18,16 +18,25 @@ namespace TankGame.Views
         [SerializeField] private GameObject menuScreen;
         [SerializeField] private Button playButton;
         [SerializeField] private List<Button> levelButtons = new List<Button>();
+
+        // [Header("References")]
+        // [SerializeField] private 
+        #endregion------------------------
+
+        #region ------------ Private Variables ------------
+        private int levelCount = -1;
+        private int maxLevel = 10;
         #endregion------------------------
 
         #region ------------ Monobehavior Methods ------------
         private void Awake()
         {
             playButton.onClick.AddListener(PlayButton);
-            for (int i = 0; i < levelButtons.Count; i++)
+            foreach (Button level in levelButtons)
             {
-                levelButtons[i].onClick.AddListener(LoadScene);
+                level.interactable = false;
             }
+            UnlockLevel();
         }
 
         private void Start()
@@ -38,17 +47,23 @@ namespace TankGame.Views
         #endregion ------------------------
 
         #region ------------ Private Methods ------------
-
         private void PlayButton()
         {
             titleScreen.SetActive(false);
             menuScreen.SetActive(true);
         }
 
-        private void LoadScene()
+        private void UnlockLevel()
         {
-            SceneManager.LoadScene(levelScenes[0].name);
+            levelCount++;
+            levelButtons[levelCount].interactable = true;
+            levelButtons[levelCount].GetComponentInChildren<TextMeshProUGUI>().text = (levelCount + 1).ToString();
         }
+
+        // private void LockLevel()
+        // {
+
+        // }
         #endregion ------------------------
     }
 }
