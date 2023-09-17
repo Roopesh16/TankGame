@@ -30,7 +30,6 @@ namespace TankGame.Managers
             {
                 Destroy(gameObject);
             }
-            DontDestroyOnLoad(this);
         }
         #endregion------------------------
 
