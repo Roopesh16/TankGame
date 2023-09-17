@@ -12,6 +12,7 @@ namespace TankGame.Managers
         #region ------------ Private Variables ------------
         private GameState gameState = GameState.NONE;
         private TankState tankState = TankState.REST;
+        private string currentScene = null;
         #endregion------------------------
 
         #region ------------ Monobehavior Methods ------------
@@ -50,6 +51,16 @@ namespace TankGame.Managers
         public void SetTankState(TankState tankState)
         {
             this.tankState = tankState;
+        }
+
+        public void SetCurrentScene(string sceneName)
+        {
+            currentScene = sceneName;
+        }
+
+        public string GetCurrentScene()
+        {
+            return currentScene;
         }
         #endregion------------------------
     }
