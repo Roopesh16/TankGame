@@ -343,6 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1287942160}
+  finalScoreText: {fileID: 132026973}
   gameOver: {fileID: 633488306}
   mineInfo: {fileID: 97275211}
 --- !u!114 &86126885 stripped
@@ -4453,7 +4454,7 @@ GameObject:
   - component: {fileID: 1830594772}
   - component: {fileID: 1830594771}
   m_Layer: 5
-  m_Name: Score
+  m_Name: FinalScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
