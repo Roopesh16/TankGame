@@ -2,6 +2,7 @@ using UnityEngine;
 using TankGame.Models;
 using TankGame.Managers;
 using TankGame.Controllers;
+using Unity.VisualScripting;
 
 namespace TankGame.Views
 {
@@ -12,6 +13,7 @@ namespace TankGame.Views
         [SerializeField] private WallModel wallModel;
         [SerializeField] private WallController wallController;
         [SerializeField] private GameView gameView;
+        [SerializeField] private MoveCamController moveCamController;
         #endregion------------------------
 
         #region ------------ Private Variables ------------
@@ -40,9 +42,9 @@ namespace TankGame.Views
                 gameView.SetScoreText(wallScore);
                 other.gameObject.SetActive(false);
                 gameObject.SetActive(false);
-                if (wallType == WallType.SMALL)
+                if (wallType == WallType.SMALL && GameManager.instance.GetLevel() == 49)
                 {
-                    wallController.DisplayMineInfo();
+                    moveCamController.ShowMineInfo();
                 }
                 wallController.NextWall();
             }

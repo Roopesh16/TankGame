@@ -53,7 +53,7 @@ namespace TankGame.Views
             menuScreen.SetActive(true);
         }
 
-        private void UnlockLevel()
+        public void UnlockLevel()
         {
             levelCount++;
             levelButtons[levelCount].interactable = true;

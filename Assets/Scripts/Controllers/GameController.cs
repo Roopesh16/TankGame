@@ -10,7 +10,6 @@ namespace TankGame.Controllers
         #region ------------ Serialize Variables ------------
         [SerializeField] private TankController tankController;
         [SerializeField] private WallController wallController;
-        [SerializeField] private CameraController cameraController;
         [SerializeField] private GameView gameView;
         #endregion------------------------
 
@@ -34,19 +33,6 @@ namespace TankGame.Controllers
             gameView.OnGameOver();
         }
 
-        public void ShowMineInfo()
-        {
-            GameManager.instance.SetTankState(TankState.DISABLE);
-            StartCoroutine(cameraController.MoveCamera());
-            gameView.DisplayMineInfo();
-        }
-
-        public void HideMineInfo()
-        {
-            StartCoroutine(cameraController.ResetCamera());
-            gameView.HideMineInfo();
-            GameManager.instance.SetTankState(TankState.REST);
-        }
         #endregion------------------------
 
         #region ------------ Private Methods ------------

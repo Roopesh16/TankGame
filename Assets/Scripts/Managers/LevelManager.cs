@@ -17,6 +17,7 @@ namespace TankGame.Managers
 
         #region ------------ Private Variables ------------
         private float targetFill;
+        
         #endregion------------------------
 
         #region ------------ Monobehavior Methods ------------
@@ -61,6 +62,8 @@ namespace TankGame.Managers
             scene.allowSceneActivation = true;
             loadingCanvas.SetActive(false);
         }
+
+       
         #endregion------------------------
     }
 }

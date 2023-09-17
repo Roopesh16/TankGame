@@ -1,5 +1,7 @@
 using UnityEngine;
 using TankGame.Models;
+using TankGame.Views;
+using UnityEditor;
 
 namespace TankGame.Managers
 {
@@ -13,6 +15,7 @@ namespace TankGame.Managers
         private GameState gameState = GameState.NONE;
         private TankState tankState = TankState.REST;
         private string currentScene = null;
+        private int currentLevel = 0;
         #endregion------------------------
 
         #region ------------ Monobehavior Methods ------------
@@ -61,6 +64,16 @@ namespace TankGame.Managers
         public string GetCurrentScene()
         {
             return currentScene;
+        }
+
+        public void SetLevel(int level)
+        {
+            currentLevel = level;
+        }
+
+        public int GetLevel()
+        {
+            return currentLevel;
         }
         #endregion------------------------
     }

@@ -37,10 +37,6 @@ namespace TankGame.Controllers
                 gameController.OnGameOver();
             }
         }
-        public void DisplayMineInfo()
-        {
-            gameController.ShowMineInfo();
-        }
         #endregion------------------------
 
         #region ------------ Private Methods ------------
