@@ -6,7 +6,10 @@ namespace TankGame.Views
     public class GameView : MonoBehaviour
     {
         #region ------------ Serialize Variables ------------
+        [Header("UI")]
         [SerializeField] private TextMeshProUGUI scoreText;
+        [SerializeField] private TextMeshProUGUI finalScoreText;
+        [Header("References")]
         [SerializeField] private GameObject gameOver;
         [SerializeField] private GameObject mineInfo;
         #endregion------------------------
@@ -45,6 +48,7 @@ namespace TankGame.Views
         }
         public void OnGameOver()
         {
+            finalScoreText.text = totalScore.ToString();
             gameOver.SetActive(true);
         }
         #endregion------------------------
