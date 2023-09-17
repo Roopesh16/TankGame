@@ -35,7 +35,7 @@ namespace TankGame.Controllers
 
                     if (Physics.Raycast(ray, out rayHit, maxDistance))
                     {
-                        if (rayHit.collider.tag == "Base")
+                        if (rayHit.collider.tag == GameStrings.baseString)
                         {
                             GameManager.instance.SetTankState(TankState.MOVING);
                             tankView.MoveTank(rayHit.point);
