@@ -7,6 +7,7 @@ namespace TankGame.Views
     {
         public void LoadScene(string sceneName)
         {
+            GameManager.instance.SetCurrentScene(sceneName);
             LevelManager.instance.LoadScene(sceneName);
         }
     }
