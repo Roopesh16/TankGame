@@ -29,7 +29,7 @@ namespace TankGame.Views
         public void SetScoreText(int score)
         {
             totalScore += score;
-            scoreText.text = "Score : " + totalScore;
+            scoreText.text = "SCORE : " + totalScore;
         }
 
         public void DisplayMineInfo()
