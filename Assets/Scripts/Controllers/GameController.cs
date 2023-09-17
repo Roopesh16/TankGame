@@ -31,7 +31,6 @@ namespace TankGame.Controllers
         public void OnGameOver()
         {
             GameManager.instance.SetGameState(GameState.GAMEOVER);
-            AudioManager.instance.SetBGMMute();
             gameView.OnGameOver();
         }
 
