@@ -96,6 +96,7 @@ namespace TankGame.Views
         private void GameOver()
         {
             AudioManager.instance.PlayBGM(AudioBGM.TANK_IDLE, 0f);
+            AudioManager.instance.PlayBGM(AudioBGM.TANK_MOVE, 0f);
             gameController.OnGameOver();
         }
         #endregion------------------------
