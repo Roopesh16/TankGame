@@ -44,7 +44,6 @@ namespace TankGame.Views
             {
                 return true;
             }
-            print("Wall");
             return false;
         }
         public void FireBullet()
