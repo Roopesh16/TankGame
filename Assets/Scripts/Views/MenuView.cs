@@ -28,7 +28,8 @@ namespace TankGame.Views
             {
                 level.interactable = false;
             }
-            UnlockLevel();
+            // UnlockLevel();
+            UnlockAllLevel();
         }
 
         private void Start()
@@ -47,16 +48,25 @@ namespace TankGame.Views
 
         public void UnlockLevel()
         {
-            if (GameManager.instance.GetUnlockedLevel() < maxLevel)
+            return;
+            // if (GameManager.instance.GetUnlockedLevel() < maxLevel)
+            // {
+            //     for (int i = 0; i < GameManager.instance.GetUnlockedLevel(); i++)
+            //     {
+            //         levelButtons[i].interactable = true;
+            //     }
+            // }
+            // else
+            // {
+            //     print("All Complete");
+            // }
+        }
+
+        public void UnlockAllLevel()
+        {
+            for (int i = 0; i < maxLevel; i++)
             {
-                for (int i = 0; i < GameManager.instance.GetUnlockedLevel(); i++)
-                {
-                    levelButtons[i].interactable = true;
-                }
-            }
-            else
-            {
-                print("All Complete");
+                levelButtons[i].interactable = true;
             }
         }
         #endregion ------------------------
