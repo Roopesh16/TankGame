@@ -16,6 +16,7 @@ namespace TankGame.Managers
         private TankState tankState = TankState.REST;
         private string currentScene = null;
         private int currentLevel = 0;
+        private int unlockedLevel = 1;
         #endregion------------------------
 
         #region ------------ Monobehavior Methods ------------
@@ -74,6 +75,16 @@ namespace TankGame.Managers
         public int GetLevel()
         {
             return currentLevel;
+        }
+
+        public void UnlockLevel()
+        {
+            unlockedLevel++;
+        }
+
+        public int GetUnlockedLevel()
+        {
+            return unlockedLevel;
         }
         #endregion------------------------
     }

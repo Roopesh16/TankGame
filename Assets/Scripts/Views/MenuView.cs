@@ -1,7 +1,6 @@
-using TMPro;
 using UnityEngine;
-using UnityEditor;
 using UnityEngine.UI;
+using TankGame.Managers;
 using System.Collections.Generic;
 
 namespace TankGame.Views
@@ -9,23 +8,16 @@ namespace TankGame.Views
     public class MenuView : MonoBehaviour
     {
         #region ------------ Serialize Variables ------------
-        [Header("Scenes")]
-        [SerializeField] private SceneAsset menuScene;
-        [SerializeField] private List<SceneAsset> levelScenes = new List<SceneAsset>();
-
         [Header("UI")]
         [SerializeField] private GameObject titleScreen;
         [SerializeField] private GameObject menuScreen;
         [SerializeField] private Button playButton;
         [SerializeField] private List<Button> levelButtons = new List<Button>();
 
-        // [Header("References")]
-        // [SerializeField] private 
         #endregion------------------------
 
         #region ------------ Private Variables ------------
-        private int levelCount = -1;
-        private int maxLevel = 10;
+        private int maxLevel = 5;
         #endregion------------------------
 
         #region ------------ Monobehavior Methods ------------
@@ -55,15 +47,18 @@ namespace TankGame.Views
 
         public void UnlockLevel()
         {
-            levelCount++;
-            levelButtons[levelCount].interactable = true;
-            levelButtons[levelCount].GetComponentInChildren<TextMeshProUGUI>().text = (levelCount + 1).ToString();
+            if (GameManager.instance.GetUnlockedLevel() < maxLevel)
+            {
+                for (int i = 0; i < GameManager.instance.GetUnlockedLevel(); i++)
+                {
+                    levelButtons[i].interactable = true;
+                }
+            }
+            else
+            {
+                print("All Complete");
+            }
         }
-
-        // private void LockLevel()
-        // {
-
-        // }
         #endregion ------------------------
     }
 }
