@@ -46,7 +46,7 @@ namespace TankGame.Views
                 {
                     moveCamController.ShowMineInfo();
                 }
-                wallController.NextWall();
+                wallController.CheckLastWall();
             }
         }
 
