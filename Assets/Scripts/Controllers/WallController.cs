@@ -33,7 +33,7 @@ namespace TankGame.Controllers
         {
             if (walls[walls.Count - 1].isActiveAndEnabled == false)
             {
-                gameController.OnGameOver();
+                gameController.OnLevelComplete();
             }
         }
         #endregion------------------------

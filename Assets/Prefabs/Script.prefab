@@ -45,9 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
-  finalScoreText: {fileID: 0}
+  goScoreText: {fileID: 0}
+  lcScoreText: {fileID: 0}
   gameOver: {fileID: 0}
   mineInfo: {fileID: 0}
+  levelComplete: {fileID: 0}
 --- !u!1 &1579442193892051618
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,7 +339,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tankController: {fileID: 1579442194249642484}
   wallController: {fileID: 1579442194762088524}
-  cameraController: {fileID: 0}
   gameView: {fileID: 1579442193541235742}
 --- !u!1 &1579442195468292155
 GameObject:

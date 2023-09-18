@@ -8,10 +8,12 @@ namespace TankGame.Views
         #region ------------ Serialize Variables ------------
         [Header("UI")]
         [SerializeField] private TextMeshProUGUI scoreText;
-        [SerializeField] private TextMeshProUGUI finalScoreText;
+        [SerializeField] private TextMeshProUGUI goScoreText;
+        [SerializeField] private TextMeshProUGUI lcScoreText;
         [Header("References")]
         [SerializeField] private GameObject gameOver;
         [SerializeField] private GameObject mineInfo;
+        [SerializeField] private GameObject levelComplete;
         #endregion------------------------
 
         #region ------------ Private Variables ------------
@@ -48,8 +50,14 @@ namespace TankGame.Views
         }
         public void OnGameOver()
         {
-            finalScoreText.text = totalScore.ToString();
+            goScoreText.text = totalScore.ToString();
             gameOver.SetActive(true);
+        }
+
+        public void OnLevelComplete()
+        {
+            lcScoreText.text = totalScore.ToString();
+            levelComplete.SetActive(true);
         }
         #endregion------------------------
 

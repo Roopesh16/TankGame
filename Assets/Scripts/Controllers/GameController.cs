@@ -34,6 +34,14 @@ namespace TankGame.Controllers
             gameView.OnGameOver();
         }
 
+        public void OnLevelComplete()
+        {
+            GameManager.instance.UnlockLevel();
+            GameManager.instance.SetGameState(GameState.GAMEOVER);
+            AudioManager.instance.SetBGMMute();
+            gameView.OnLevelComplete();
+        }
+
         #endregion------------------------
 
         #region ------------ Private Methods ------------
