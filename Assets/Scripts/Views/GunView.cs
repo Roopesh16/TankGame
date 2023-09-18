@@ -18,7 +18,6 @@ namespace TankGame.Views
         #endregion------------------------
 
         #region ------------ Private Variables ------------
-        private int count = 0;
         private GameObject bullet;
         private RaycastHit wallHit;
         #endregion------------------------
@@ -32,7 +31,7 @@ namespace TankGame.Views
         {
             if (GameManager.instance.GetTankState() == TankState.FIRE || canFire == true)
             {
-                bullet.transform.Translate(Vector3.forward * bulletSpeed * Time.deltaTime);
+                bullet.transform.Translate(transform.forward * bulletSpeed * Time.deltaTime);
             }
         }
         #endregion------------------------
@@ -40,12 +39,12 @@ namespace TankGame.Views
         #region ------------ Public Methods ------------
         public bool IsWallPresent()
         {
-            Ray ray = new Ray(transform.position, Vector3.forward);
+            Ray ray = new Ray(transform.position, transform.forward);
             if (Physics.Raycast(ray, out wallHit, maxWallDistance, wallLayer))
             {
                 return true;
             }
-
+            print("Wall");
             return false;
         }
         public void FireBullet()
