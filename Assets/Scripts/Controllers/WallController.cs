@@ -29,10 +29,9 @@ namespace TankGame.Controllers
             InitiateAllWalls();
         }
 
-        public void NextWall()
+        public void CheckLastWall()
         {
-            currentWall++;
-            if (currentWall >= walls.Count)
+            if (walls[walls.Count - 1].isActiveAndEnabled == false)
             {
                 gameController.OnGameOver();
             }
