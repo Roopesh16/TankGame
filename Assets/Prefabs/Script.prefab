@@ -290,7 +290,6 @@ MonoBehaviour:
   walls:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
   gameController: {fileID: 1579442195232596849}
   cameraController: {fileID: 0}
 --- !u!1 &1579442195232596855
