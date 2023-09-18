@@ -83,18 +83,9 @@ namespace TankGame.Managers
 
         public void SetBGMMute()
         {
-            if (bgmSource.mute == false)
-            {
-                bgmSource.mute = true;
-            }
-            else
-            {
-                bgmSource.mute = true;
-            }
+            PlayBGM(AudioBGM.TANK_IDLE, 0f);
+            PlayBGM(AudioBGM.TANK_MOVE, 0f);
         }
-        #endregion------------------------
-
-        #region ------------ Private Methods ------------
         #endregion------------------------
     }
 }
