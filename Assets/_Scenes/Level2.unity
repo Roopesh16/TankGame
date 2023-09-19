@@ -1512,7 +1512,7 @@ PrefabInstance:
     - target: {fileID: 1779298563893046741, guid: 407b7d5449b99074f80e41737ec8bee5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1779298563893046741, guid: 407b7d5449b99074f80e41737ec8bee5,
         type: 3}
@@ -1837,6 +1837,11 @@ PrefabInstance:
       propertyPath: startingPosition
       value: 
       objectReference: {fileID: 2112681037}
+    - target: {fileID: 8716662833898293993, guid: 86c68481f6427e64fa235944ee3c08e0,
+        type: 3}
+      propertyPath: m_BaseOffset
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 8716662834326466833, guid: 86c68481f6427e64fa235944ee3c08e0,
         type: 3}
       propertyPath: maxWallDistance
@@ -1892,7 +1897,7 @@ PrefabInstance:
     - target: {fileID: 807705282676995177, guid: 9a538f0d50980724ca293f3deffe95b6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.5
+      value: -14.6
       objectReference: {fileID: 0}
     - target: {fileID: 807705282676995177, guid: 9a538f0d50980724ca293f3deffe95b6,
         type: 3}
