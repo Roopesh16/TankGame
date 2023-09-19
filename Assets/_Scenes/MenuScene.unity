@@ -1255,6 +1255,7 @@ GameObject:
   - component: {fileID: 701412543}
   - component: {fileID: 701412542}
   - component: {fileID: 701412541}
+  - component: {fileID: 701412544}
   m_Layer: 5
   m_Name: L3
   m_TagString: Untagged
@@ -1326,7 +1327,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 701412542}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 701412544}
+        m_TargetAssemblyTypeName: TankGame.Views.LevelBtnView, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level3
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &701412542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1365,6 +1378,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701412539}
   m_CullTransparentMesh: 1
+--- !u!114 &701412544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701412539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ccee7de44e54444fa11b62058996eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
