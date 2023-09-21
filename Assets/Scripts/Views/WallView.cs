@@ -46,7 +46,7 @@ namespace TankGame.Views
                 {
                     moveCamController.ShowMineInfo();
                 }
-                if (wallType == WallType.SMALL && GameManager.instance.GetLevel() == 51)
+                if (wallType == WallType.SMALL && GameManager.instance.GetLevel() == 52)
                 {
                     moveCamController.ShowMineInfo();
                 }
@@ -75,3 +75,4 @@ namespace TankGame.Views
         #endregion------------------------
     }
 }
+
