@@ -280,12 +280,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4189566658793622914}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &97275211 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5353248968326221776, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
-    type: 3}
-  m_PrefabInstance: {fileID: 5353248968245756571}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &132026973 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5353248968293568710, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
@@ -943,7 +937,7 @@ PrefabInstance:
         type: 3}
       propertyPath: mineInfo
       value: 
-      objectReference: {fileID: 97275211}
+      objectReference: {fileID: 5353248968245756572}
     - target: {fileID: 1579442193541235742, guid: 059b19ebede61274183022ab227c7029,
         type: 3}
       propertyPath: scoreText
@@ -1296,6 +1290,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 618971832, guid: 6afc6767e6fa2fd42a8178bfd0dec085, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 677465495, guid: 6afc6767e6fa2fd42a8178bfd0dec085, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158606897, guid: 6afc6767e6fa2fd42a8178bfd0dec085, type: 3}
+      propertyPath: m_Name
+      value: LevelComplete
+      objectReference: {fileID: 0}
+    - target: {fileID: 1158606899, guid: 6afc6767e6fa2fd42a8178bfd0dec085, type: 3}
+      propertyPath: m_text
+      value: NEW LEVEL UNLOCKED!
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582675151, guid: 6afc6767e6fa2fd42a8178bfd0dec085, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 62186650}
+    - target: {fileID: 1582675151, guid: 6afc6767e6fa2fd42a8178bfd0dec085, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 10235843}
     - target: {fileID: 5353248966598061042, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1411,13 +1429,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 5353248966691657816, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 10235843}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6afc6767e6fa2fd42a8178bfd0dec085, type: 3}
+--- !u!1 &5353248968245756572 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 618971832, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
+    type: 3}
+  m_PrefabInstance: {fileID: 5353248968245756571}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6323201603781766030
 PrefabInstance:
   m_ObjectHideFlags: 0

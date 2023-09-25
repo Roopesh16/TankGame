@@ -821,6 +821,11 @@ PrefabInstance:
       propertyPath: wallController
       value: 
       objectReference: {fileID: 1271119485}
+    - target: {fileID: 4189566658741075111, guid: e04d988b8a58780438591bc18378a817,
+        type: 3}
+      propertyPath: moveCamController
+      value: 
+      objectReference: {fileID: 1260880614}
     - target: {fileID: 4189566658741075115, guid: e04d988b8a58780438591bc18378a817,
         type: 3}
       propertyPath: m_RootOrder
@@ -2199,6 +2204,11 @@ PrefabInstance:
       propertyPath: wallController
       value: 
       objectReference: {fileID: 1271119485}
+    - target: {fileID: 4189566658741075111, guid: e04d988b8a58780438591bc18378a817,
+        type: 3}
+      propertyPath: moveCamController
+      value: 
+      objectReference: {fileID: 1260880614}
     - target: {fileID: 4189566658741075115, guid: e04d988b8a58780438591bc18378a817,
         type: 3}
       propertyPath: m_RootOrder
@@ -7961,42 +7971,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 611738420}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &618971832
+--- !u!1 &618971832 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 618971832, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
+    type: 3}
+  m_PrefabInstance: {fileID: 669933472}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 618971833}
-  m_Layer: 5
-  m_Name: Info
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &618971833
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 618971832}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 669933475}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &628245330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8381,6 +8361,11 @@ PrefabInstance:
       propertyPath: wallController
       value: 
       objectReference: {fileID: 1271119485}
+    - target: {fileID: 4189566658741075111, guid: e04d988b8a58780438591bc18378a817,
+        type: 3}
+      propertyPath: moveCamController
+      value: 
+      objectReference: {fileID: 1260880614}
     - target: {fileID: 4189566658741075115, guid: e04d988b8a58780438591bc18378a817,
         type: 3}
       propertyPath: m_RootOrder
@@ -8638,37 +8623,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 677465495, guid: 6afc6767e6fa2fd42a8178bfd0dec085, type: 3}
+    - target: {fileID: 618971832, guid: 6afc6767e6fa2fd42a8178bfd0dec085, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1158606897, guid: 6afc6767e6fa2fd42a8178bfd0dec085, type: 3}
-      propertyPath: m_Name
-      value: Rate
-      objectReference: {fileID: 0}
-    - target: {fileID: 1158606898, guid: 6afc6767e6fa2fd42a8178bfd0dec085, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 130
-      objectReference: {fileID: 0}
-    - target: {fileID: 1158606899, guid: 6afc6767e6fa2fd42a8178bfd0dec085, type: 3}
-      propertyPath: m_text
-      value: THANKS FOR PLAYING THE GAME!
-      objectReference: {fileID: 0}
-    - target: {fileID: 1158606899, guid: 6afc6767e6fa2fd42a8178bfd0dec085, type: 3}
-      propertyPath: m_fontSize
-      value: 72
-      objectReference: {fileID: 0}
-    - target: {fileID: 1158606899, guid: 6afc6767e6fa2fd42a8178bfd0dec085, type: 3}
-      propertyPath: m_margin.w
-      value: -185.1399
-      objectReference: {fileID: 0}
-    - target: {fileID: 1158606899, guid: 6afc6767e6fa2fd42a8178bfd0dec085, type: 3}
-      propertyPath: m_margin.y
-      value: -106.34485
-      objectReference: {fileID: 0}
-    - target: {fileID: 1163506099, guid: 6afc6767e6fa2fd42a8178bfd0dec085, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 343
       objectReference: {fileID: 0}
     - target: {fileID: 5353248966598061042, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
         type: 3}
@@ -8780,93 +8737,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 5353248966691657816, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1260880614}
-    - target: {fileID: 5353248966691657816, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HideMineInfo
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353248966691657816, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TankGame.Controllers.MoveCamController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353248967603543627, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.9017838
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353248967603543627, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.86729157
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353248967603543627, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.63860416
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353248967603543627, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -1.6799927
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353248967603543627, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -4.6574707
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353248967603543627, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353248967603543627, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353248967788429609, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353248968326221776, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
-        type: 3}
-      propertyPath: m_Name
-      value: TurnInfo
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353248968326221776, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353248968347318537, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.5943396
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353248968347318537, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.42632845
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353248968347318537, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.013456728
-      objectReference: {fileID: 0}
-    - target: {fileID: 5353248968416172162, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
-        type: 3}
-      propertyPath: m_text
-      value: 'THERE IS FORK IN THE ROAD.
-
-        CHOOSE YOUR PATH!'
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6afc6767e6fa2fd42a8178bfd0dec085, type: 3}
 --- !u!114 &669933473 stripped
@@ -8884,12 +8754,6 @@ MonoBehaviour:
 --- !u!1 &669933474 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5353248967788429609, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
-    type: 3}
-  m_PrefabInstance: {fileID: 669933472}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &669933475 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5353248968246190064, guid: 6afc6767e6fa2fd42a8178bfd0dec085,
     type: 3}
   m_PrefabInstance: {fileID: 669933472}
   m_PrefabAsset: {fileID: 0}
@@ -12402,6 +12266,11 @@ PrefabInstance:
       propertyPath: wallController
       value: 
       objectReference: {fileID: 1271119485}
+    - target: {fileID: 4189566658741075111, guid: e04d988b8a58780438591bc18378a817,
+        type: 3}
+      propertyPath: moveCamController
+      value: 
+      objectReference: {fileID: 1260880614}
     - target: {fileID: 4189566658741075115, guid: e04d988b8a58780438591bc18378a817,
         type: 3}
       propertyPath: m_RootOrder
@@ -14025,6 +13894,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1234581621}
     m_Modifications:
+    - target: {fileID: 6323201603637909728, guid: a2745e14a47090745ab50d5e068888b4,
+        type: 3}
+      propertyPath: gameView
+      value: 
+      objectReference: {fileID: 1191310078}
+    - target: {fileID: 6323201603637909728, guid: a2745e14a47090745ab50d5e068888b4,
+        type: 3}
+      propertyPath: wallModel
+      value: 
+      objectReference: {fileID: 1428881716}
+    - target: {fileID: 6323201603637909728, guid: a2745e14a47090745ab50d5e068888b4,
+        type: 3}
+      propertyPath: wallController
+      value: 
+      objectReference: {fileID: 1271119485}
+    - target: {fileID: 6323201603637909728, guid: a2745e14a47090745ab50d5e068888b4,
+        type: 3}
+      propertyPath: moveCamController
+      value: 
+      objectReference: {fileID: 1260880614}
     - target: {fileID: 6323201603637909731, guid: a2745e14a47090745ab50d5e068888b4,
         type: 3}
       propertyPath: m_Name
@@ -19370,6 +19259,11 @@ PrefabInstance:
       propertyPath: wallController
       value: 
       objectReference: {fileID: 1271119485}
+    - target: {fileID: 6323201603637909728, guid: a2745e14a47090745ab50d5e068888b4,
+        type: 3}
+      propertyPath: moveCamController
+      value: 
+      objectReference: {fileID: 1260880614}
     - target: {fileID: 6323201603637909731, guid: a2745e14a47090745ab50d5e068888b4,
         type: 3}
       propertyPath: m_Name
@@ -24325,6 +24219,11 @@ PrefabInstance:
       propertyPath: wallController
       value: 
       objectReference: {fileID: 1271119485}
+    - target: {fileID: 6323201603637909728, guid: a2745e14a47090745ab50d5e068888b4,
+        type: 3}
+      propertyPath: moveCamController
+      value: 
+      objectReference: {fileID: 1260880614}
     - target: {fileID: 6323201603637909731, guid: a2745e14a47090745ab50d5e068888b4,
         type: 3}
       propertyPath: m_Name
@@ -24762,6 +24661,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: MidWall
       objectReference: {fileID: 0}
+    - target: {fileID: 4189566658741075111, guid: e04d988b8a58780438591bc18378a817,
+        type: 3}
+      propertyPath: gameView
+      value: 
+      objectReference: {fileID: 1191310078}
+    - target: {fileID: 4189566658741075111, guid: e04d988b8a58780438591bc18378a817,
+        type: 3}
+      propertyPath: wallModel
+      value: 
+      objectReference: {fileID: 1428881716}
+    - target: {fileID: 4189566658741075111, guid: e04d988b8a58780438591bc18378a817,
+        type: 3}
+      propertyPath: wallController
+      value: 
+      objectReference: {fileID: 1271119485}
+    - target: {fileID: 4189566658741075111, guid: e04d988b8a58780438591bc18378a817,
+        type: 3}
+      propertyPath: moveCamController
+      value: 
+      objectReference: {fileID: 1260880614}
     - target: {fileID: 4189566658741075115, guid: e04d988b8a58780438591bc18378a817,
         type: 3}
       propertyPath: m_RootOrder
@@ -25687,6 +25606,11 @@ PrefabInstance:
       propertyPath: wallController
       value: 
       objectReference: {fileID: 1271119485}
+    - target: {fileID: 6323201603637909728, guid: a2745e14a47090745ab50d5e068888b4,
+        type: 3}
+      propertyPath: moveCamController
+      value: 
+      objectReference: {fileID: 1260880614}
     - target: {fileID: 6323201603637909731, guid: a2745e14a47090745ab50d5e068888b4,
         type: 3}
       propertyPath: m_Name
@@ -31090,6 +31014,11 @@ PrefabInstance:
       propertyPath: wallController
       value: 
       objectReference: {fileID: 1271119485}
+    - target: {fileID: 6323201603637909728, guid: a2745e14a47090745ab50d5e068888b4,
+        type: 3}
+      propertyPath: moveCamController
+      value: 
+      objectReference: {fileID: 1260880614}
     - target: {fileID: 6323201603637909731, guid: a2745e14a47090745ab50d5e068888b4,
         type: 3}
       propertyPath: m_Name
