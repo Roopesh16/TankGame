@@ -30,7 +30,6 @@ namespace TankGame.Views
             playButton.onClick.AddListener(PlayButton);
             infoButton.onClick.AddListener(InfoButton);
             infoBackBtn.onClick.AddListener(InfoBackButton);
-
             foreach (Button level in levelButtons)
             {
                 level.interactable = false;
@@ -43,6 +42,7 @@ namespace TankGame.Views
         {
             titleScreen.SetActive(true);
             menuScreen.SetActive(false);
+            AudioManager.instance.PlayBGM(AudioBGM.THEME, 0.5f);
         }
         #endregion ------------------------
 
