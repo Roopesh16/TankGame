@@ -42,7 +42,7 @@ namespace TankGame.Views
         {
             titleScreen.SetActive(true);
             menuScreen.SetActive(false);
-            AudioManager.instance.PlayBGM(AudioBGM.THEME, 0.5f);
+            AudioManager.instance.PlayBGM(AudioBGM.THEME);
         }
         #endregion ------------------------
 
