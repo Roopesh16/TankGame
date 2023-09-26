@@ -31,7 +31,7 @@ namespace TankGame.Views
         {
             if (GameManager.instance.GetTankState() == TankState.FIRE || canFire == true)
             {
-                bullet.transform.Translate(transform.forward * bulletSpeed * Time.deltaTime);
+                bullet.transform.Translate(transform.right * bulletSpeed * Time.deltaTime);
             }
         }
         #endregion------------------------
