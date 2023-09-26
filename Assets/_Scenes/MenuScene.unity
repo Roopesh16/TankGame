@@ -4946,16 +4946,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5037928886175157731, guid: 5e8e9ea151d4b0444a3c87030eeeb5b4,
-        type: 3}
-      propertyPath: bgmList.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5037928886175157731, guid: 5e8e9ea151d4b0444a3c87030eeeb5b4,
-        type: 3}
-      propertyPath: bgmList.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 93ef7459c29291248a4ed01d7b369610, type: 3}
     - target: {fileID: 5037928886175157732, guid: 5e8e9ea151d4b0444a3c87030eeeb5b4,
         type: 3}
       propertyPath: m_RootOrder
