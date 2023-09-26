@@ -14,6 +14,7 @@ namespace TankGame.Managers
     {
         TANK_IDLE,
         TANK_MOVE,
+        THEME
     }
 
     public class AudioManager : MonoBehaviour
@@ -57,6 +58,7 @@ namespace TankGame.Managers
             bgmSource = gameObject.AddComponent<AudioSource>();
             bgmSource.loop = true;
             bgmSource.playOnAwake = true;
+            
 
         }
         #endregion------------------------
