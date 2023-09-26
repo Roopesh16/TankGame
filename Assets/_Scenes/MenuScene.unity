@@ -1323,11 +1323,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "<color=#EB1717>WELCOME TO TANK BASE!</color>\n\nThis is a touch and move
-    game. Touch on the ground and the tank will move to that place.\n\nThe aim is
-    to break all the walls and finish each drill.\n\nThe tank is equipped with automatic
-    shoot tech, when it's near the wall the gun will shoot on its own.\n\nBut, beware,
-    there are mines on the ground, move carefully.\n\nFor each wall there are points
-    - \nRed - 5 points\nWhite - 10 points\nBlue - 15 points"
+    game. Touch on the brown ground and the tank will move to that place.\n\nThe
+    aim is to break all the walls and finish each drill.\n\nThe tank is equipped
+    with automatic shoot tech, when it's near the wall the gun will shoot on its
+    own.\n\nBut, beware, there are mines on the ground, move carefully.\n\nFor each
+    wall there are points - \nRed - 5 points\nWhite - 10 points\nBlue - 15 points"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f8a0e4c7eee5a0d4b9e7103de7fbd8b9, type: 2}
   m_sharedMaterial: {fileID: 3845511331290883001, guid: f8a0e4c7eee5a0d4b9e7103de7fbd8b9,
@@ -5095,7 +5095,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5217850343376986521}
-  m_LocalRotation: {x: -0.18094087, y: -0, z: -0, w: 0.98349404}
+  m_LocalRotation: {x: 0, y: 0.98357147, z: -0.1805191, w: 0}
   m_LocalPosition: {x: -0, y: 163, z: -301}
   m_LocalScale: {x: 196.06685, y: 196.06685, z: 196.06682}
   m_ConstrainProportionsScale: 0
@@ -5107,7 +5107,7 @@ Transform:
   - {fileID: 8996094344933566573}
   m_Father: {fileID: 1659668860}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -20.849, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 20.8, y: 180, z: 0}
 --- !u!4 &6125141876695908072
 Transform:
   m_ObjectHideFlags: 0
@@ -5241,7 +5241,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6551868815776088712}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.50000006, z: -0.08876333}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
