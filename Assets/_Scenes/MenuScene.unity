@@ -1324,7 +1324,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "<color=#EB1717>WELCOME TO TANK BASE!</color>\n\nThis is a touch and move
     game. Touch on the ground and the tank will move to that place.\n\nThe aim is
-    to brake all the walls and finish each drill.\n\nThe tank is equipped with automatic
+    to break all the walls and finish each drill.\n\nThe tank is equipped with automatic
     shoot tech, when it's near the wall the gun will shoot on its own.\n\nBut, beware,
     there are mines on the ground, move carefully.\n\nFor each wall there are points
     - \nRed - 5 points\nWhite - 10 points\nBlue - 15 points"
