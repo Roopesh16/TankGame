@@ -31,9 +31,8 @@ namespace TankGame.Managers
             {
                 Destroy(gameObject);
             }
-
             DontDestroyOnLoad(gameObject);
-            currentLevel = PlayerPrefs.GetInt("Level");
+            unlockedLevel = PlayerPrefs.GetInt("Level", 1);
         }
         #endregion------------------------
 
@@ -82,6 +81,7 @@ namespace TankGame.Managers
         {
             unlockedLevel++;
             PlayerPrefs.SetInt("Level", unlockedLevel);
+            PlayerPrefs.Save();
         }
 
         public int GetUnlockedLevel()
