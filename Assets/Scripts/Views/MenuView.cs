@@ -40,9 +40,9 @@ namespace TankGame.Views
 
         private void Start()
         {
+            AudioManager.instance.PlayBGM(AudioBGM.THEME);
             titleScreen.SetActive(true);
             menuScreen.SetActive(false);
-            AudioManager.instance.PlayBGM(AudioBGM.THEME);
         }
         #endregion ------------------------
 

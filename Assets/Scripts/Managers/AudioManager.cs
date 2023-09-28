@@ -58,8 +58,6 @@ namespace TankGame.Managers
             bgmSource = gameObject.AddComponent<AudioSource>();
             bgmSource.loop = true;
             bgmSource.playOnAwake = true;
-            
-
         }
         #endregion------------------------
 
