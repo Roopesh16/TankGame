@@ -12,10 +12,13 @@ namespace TankGame.Views
         [SerializeField] private GameObject titleScreen;
         [SerializeField] private GameObject menuScreen;
         [SerializeField] private GameObject infoScreen;
+        [SerializeField] private GameObject aboutScreen;
         [Header("UI Button")]
         [SerializeField] private Button playButton;
         [SerializeField] private Button infoButton;
         [SerializeField] private Button infoBackBtn;
+        [SerializeField] private Button aboutButton;
+        [SerializeField] private Button aboutBackBtn;
         [SerializeField] private List<Button> levelButtons = new List<Button>();
 
         #endregion------------------------
@@ -30,6 +33,8 @@ namespace TankGame.Views
             playButton.onClick.AddListener(PlayButton);
             infoButton.onClick.AddListener(InfoButton);
             infoBackBtn.onClick.AddListener(InfoBackButton);
+            aboutButton.onClick.AddListener(AboutButton);
+            aboutBackBtn.onClick.AddListener(AboutBackButton);
             foreach (Button level in levelButtons)
             {
                 level.interactable = false;
@@ -63,6 +68,18 @@ namespace TankGame.Views
         {
             titleScreen.SetActive(true);
             infoScreen.SetActive(false);
+        }
+
+        private void AboutButton()
+        {
+            titleScreen.SetActive(false);
+            aboutScreen.SetActive(true);
+        }
+
+        private void AboutBackButton()
+        {
+            titleScreen.SetActive(true);
+            aboutScreen.SetActive(false);
         }
 
         public void UnlockLevel()
