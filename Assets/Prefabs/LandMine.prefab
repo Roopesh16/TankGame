@@ -97,7 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3908431337593314d8b45690a525ffc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameController: {fileID: 0}
 --- !u!64 &8290233955893576698
 MeshCollider:
   m_ObjectHideFlags: 0

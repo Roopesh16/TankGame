@@ -84,16 +84,12 @@ namespace TankGame.Views
 
         public void UnlockLevel()
         {
-            if (GameManager.instance.GetUnlockedLevel() < maxLevel)
+            if (GameManager.instance.GetUnlockedLevel() <= maxLevel)
             {
                 for (int i = 0; i < GameManager.instance.GetUnlockedLevel(); i++)
                 {
                     levelButtons[i].interactable = true;
                 }
-            }
-            else
-            {
-                print("All Complete");
             }
         }
 
