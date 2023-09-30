@@ -86,7 +86,10 @@ namespace TankGame.Views
         {
             for (int i = 0; i < GameManager.instance.GetUnlockedLevel(); i++)
             {
-                levelButtons[i].interactable = true;
+                if (levelButtons[i].IsInteractable() == false)
+                {
+                    levelButtons[i].interactable = true;
+                }
             }
         }
 
