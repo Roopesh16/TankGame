@@ -36,10 +36,7 @@ namespace TankGame.Controllers
 
         public void OnLevelComplete()
         {
-            if (GameManager.instance.GetLevel() != 53)
-            {
-                GameManager.instance.UnlockLevel();
-            }
+            GameManager.instance.UnlockLevel();
             GameManager.instance.SetGameState(GameState.GAMEOVER);
             AudioManager.instance.SetBGMMute();
             gameView.OnLevelComplete();
