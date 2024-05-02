@@ -8,13 +8,13 @@ namespace TankGame.Utility
 
         public static T Instance { get { return instance; } }
 
-        private void Awake()
+        virtual protected void Awake()
         {
             if (instance == null)
             {
                 instance = (T)this;
             }
-            else if(instance != this)
+            else if (instance != this)
             {
                 Destroy(gameObject);
             }
