@@ -1,7 +1,7 @@
-using UnityEngine;
-using TankGame.Views;
-using TankGame.Models;
+using TankGame.Main;
 using TankGame.Managers;
+using TankGame.Models;
+using UnityEngine;
 
 namespace TankGame.Tank
 {
@@ -17,11 +17,8 @@ namespace TankGame.Tank
         #endregion------------------------
 
         #region ------------ Private Variables ------------
-        private TankState currentTankState;
+        private TankService tankService => GameService.Instance.TankService;
         private RaycastHit rayHit;
-        #endregion------------------------
-
-        #region ------------ Public Variables ------------
         #endregion------------------------
 
         #region ------------ Monobehavior Methods ------------
@@ -29,7 +26,7 @@ namespace TankGame.Tank
         {
             if (GameManager.instance.GetGameState() == GameState.PLAY)
             {
-                if (Input.GetMouseButtonDown(0) && GameManager.instance.GetTankState() == TankState.REST)
+                if (Input.GetMouseButtonDown(0) && tankService.GetTankState() == TankState.REST)
                 {
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -37,7 +34,7 @@ namespace TankGame.Tank
                     {
                         if (rayHit.collider.tag == GameStrings.baseString)
                         {
-                            GameManager.instance.SetTankState(TankState.MOVING);
+                            tankService.SetTankState(TankState.MOVING);
                             tankView.MoveTank(rayHit.point);
                         }
                     }
@@ -49,13 +46,9 @@ namespace TankGame.Tank
         #region ------------ Public Methods ------------
         public void OnGameStart()
         {
-            GameManager.instance.SetTankState(TankState.REST);
+            tankService.SetTankState(TankState.REST);
             tankView.OnGameStart();
         }
-        #endregion------------------------
-
-        #region ------------ Private Methods ------------
-
         #endregion------------------------
     }
 }
