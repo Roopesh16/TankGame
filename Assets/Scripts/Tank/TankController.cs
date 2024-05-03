@@ -44,6 +44,14 @@ namespace TankGame.Tank
         #endregion------------------------
 
         #region ------------ Public Methods ------------
+        public TankController(TankView tankView)
+        {
+            this.tankView = tankView;
+            tankModel = new TankModel();
+            tankModel.SetController(this);
+            tankView.SetController(this);
+        }
+
         public void OnGameStart()
         {
             tankService.SetTankState(TankState.REST);
