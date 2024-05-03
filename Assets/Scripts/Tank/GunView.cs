@@ -2,7 +2,7 @@ using UnityEngine;
 using TankGame.Models;
 using TankGame.Managers;
 
-namespace TankGame.Views
+namespace TankGame.Tank
 {
     public class GunView : MonoBehaviour
     {
@@ -53,9 +53,6 @@ namespace TankGame.Views
             bullet.transform.position = shootingPoint.position;
             AudioManager.instance.PlaySFX(AudioSFX.TANK_SHOT, 0.5f);
         }
-        #endregion------------------------
-
-        #region ------------ Private Methods ------------
         #endregion------------------------
     }
 }

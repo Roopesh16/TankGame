@@ -1,12 +1,5 @@
-namespace TankGame.Models
+namespace TankGame.Tank
 {
-    public enum TankState
-    {
-        DISABLE,
-        REST,
-        MOVING,
-        FIRE
-    }
     public class TankModel
     {
 

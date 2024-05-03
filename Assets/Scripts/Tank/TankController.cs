@@ -3,7 +3,7 @@ using TankGame.Views;
 using TankGame.Models;
 using TankGame.Managers;
 
-namespace TankGame.Controllers
+namespace TankGame.Tank
 {
     public class TankController : MonoBehaviour
     {

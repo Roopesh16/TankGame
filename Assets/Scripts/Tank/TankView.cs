@@ -4,7 +4,7 @@ using TankGame.Models;
 using TankGame.Managers;
 using TankGame.Controllers;
 
-namespace TankGame.Views
+namespace TankGame.Tank
 {
     public class TankView : MonoBehaviour
     {
