@@ -1,7 +1,5 @@
-using UnityEngine;
 using TankGame.Models;
-using TankGame.Views;
-using UnityEditor;
+using UnityEngine;
 
 namespace TankGame.Managers
 {
@@ -13,7 +11,6 @@ namespace TankGame.Managers
 
         #region ------------ Private Variables ------------
         private GameState gameState = GameState.NONE;
-        private TankState tankState = TankState.REST;
         private string currentScene = null;
         private int currentLevel = 0;
         private int unlockedLevel = 1;
@@ -47,15 +44,7 @@ namespace TankGame.Managers
             this.gameState = gameState;
         }
 
-        public TankState GetTankState()
-        {
-            return this.tankState;
-        }
 
-        public void SetTankState(TankState tankState)
-        {
-            this.tankState = tankState;
-        }
 
         public void SetCurrentScene(string sceneName)
         {
