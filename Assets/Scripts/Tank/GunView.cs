@@ -1,6 +1,6 @@
-using UnityEngine;
-using TankGame.Models;
+using TankGame.Main;
 using TankGame.Managers;
+using UnityEngine;
 
 namespace TankGame.Tank
 {
@@ -20,6 +20,7 @@ namespace TankGame.Tank
         #region ------------ Private Variables ------------
         private GameObject bullet;
         private RaycastHit wallHit;
+        private TankService tankService => GameService.Instance.TankService;
         #endregion------------------------
 
         #region ------------ Public Variables ------------
@@ -29,7 +30,7 @@ namespace TankGame.Tank
         #region ------------ Monobehavior Methods ------------
         void Update()
         {
-            if (GameManager.instance.GetTankState() == TankState.FIRE || canFire == true)
+            if (tankService.GetTankState() == TankState.FIRE || canFire == true)
             {
                 bullet.transform.Translate(transform.right * bulletSpeed * Time.deltaTime);
             }
