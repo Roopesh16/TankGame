@@ -30,7 +30,7 @@ namespace TankGame.Inputs
                         if (rayHit.collider.tag == GameStrings.baseString)
                         {
                             tankService.SetTankState(TankState.MOVING);
-                            tankService.MoveTank();
+                            tankService.MoveTank(rayHit.point);
                         }
                     }
                 }

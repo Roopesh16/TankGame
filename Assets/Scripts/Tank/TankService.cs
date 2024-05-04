@@ -13,5 +13,7 @@
         {
             this.tankState = tankState;
         }
+
+        public void MoveTank(Vector3 hitPosition) => tankController.MoveTank(hitPosition);
     }
 }
