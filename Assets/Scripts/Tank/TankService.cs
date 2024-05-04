@@ -1,8 +1,17 @@
-﻿namespace TankGame.Tank
+﻿using UnityEngine;
+
+namespace TankGame.Tank
 {
     public class TankService
     {
-        private TankState tankState = TankState.REST;
+        private TankState tankState;
+        private TankController tankController;
+
+        public TankService(TankView tankView)
+        {
+            tankState = TankState.REST;
+            tankController = new TankController(tankView);
+        }
 
         public TankState GetTankState()
         {
