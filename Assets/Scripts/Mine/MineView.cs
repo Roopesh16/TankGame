@@ -1,11 +1,9 @@
-using UnityEngine;
 using TankGame.Managers;
-using TankGame.Views;
+using TankGame.Tank;
+using UnityEngine;
 
 public class MineView : MonoBehaviour
 {
-    #region ------------ Serialized Variables ------------
-    #endregion------------------------
     #region ------------ Private Methods ------------
     private void OnTriggerEnter(Collider other)
     {
