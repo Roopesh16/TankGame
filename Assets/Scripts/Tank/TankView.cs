@@ -81,8 +81,7 @@ namespace TankGame.Tank
         #region ------------ Private Methods ------------
         private void GameOver()
         {
-            AudioManager.instance.SetBGMMute();
-            gameController.OnGameOver();
+            tankController.OnGameOver();
         }
         #endregion------------------------
     }
