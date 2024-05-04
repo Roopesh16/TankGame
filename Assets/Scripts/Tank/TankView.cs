@@ -1,8 +1,7 @@
+using TankGame.Controllers;
+using TankGame.Managers;
 using UnityEngine;
 using UnityEngine.AI;
-using TankGame.Models;
-using TankGame.Managers;
-using TankGame.Controllers;
 
 namespace TankGame.Tank
 {
@@ -13,57 +12,48 @@ namespace TankGame.Tank
         [SerializeField] private Transform startingPosition;
         [SerializeField] private GunView gunView;
         [SerializeField] private Transform blastPosition;
-        [SerializeField] private GameObject blastPrefab;
+        [SerializeField] private ParticleSystem blastParticle;
         [SerializeField] private GameController gameController;
 
-        [Header("Values")]
-        [SerializeField] private float movementDuration = 2f;
-        [SerializeField] private float tankVelocity = 3f;
-        [SerializeField] private float minimumDistance = 2f;
-
+        [SerializeField] private NavMeshAgent tankNavMesh;
+        [SerializeField] private Animator tankAnim;
         #endregion------------------------
 
         #region ------------ Private Variables ------------
         private bool canMove = false;
         private Vector3 hitPosition;
-        private NavMeshAgent tankNavMesh;
-        private Animator tankAnim;
-        #endregion------------------------
+        private TankController tankController;
 
-        #region ------------ Public Variables ------------
         #endregion------------------------
 
         #region ------------ Monobehavior Methods ------------
-        void Awake()
-        {
-            tankNavMesh = GetComponent<NavMeshAgent>();
-            tankAnim = GetComponent<Animator>();
-        }
         void Update()
         {
             if (canMove)
             {
                 tankNavMesh.SetDestination(hitPosition);
 
-                if (Vector3.Distance(hitPosition, transform.position) <= minimumDistance)
+                if (Vector3.Distance(hitPosition, transform.position) <= tankController.GetMinDistance())
                 {
                     tankNavMesh.isStopped = true;
                     canMove = false;
                     if (gunView.IsWallPresent())
                     {
-                        GameManager.instance.SetTankState(TankState.FIRE);
+                        tankController.SetTankState(TankState.FIRE);
                         gunView.FireBullet();
                     }
                     tankAnim.SetBool("IsMove", false);
                     AudioManager.instance.PlayBGM(AudioBGM.TANK_IDLE, 0.8f);
-                    GameManager.instance.SetTankState(TankState.REST);
+                    tankController.SetTankState(TankState.REST);
                 }
             }
         }
         #endregion------------------------
 
         #region ------------ Public Methods ------------
-        public void OnGameStart()
+        public void SetController(TankController tankController) => this.tankController = tankController;
+
+        public void SetupTankView()
         {
             AudioManager.instance.PlayBGM(AudioBGM.TANK_IDLE, 0.8f);
             tankAnim.SetBool("IsMove", false);
@@ -72,23 +62,19 @@ namespace TankGame.Tank
 
         public void MoveTank(Vector3 hitPosition)
         {
-            if (GameManager.instance.GetTankState() == TankState.MOVING)
-            {
-                tankNavMesh.isStopped = false;
-                canMove = true;
-                this.hitPosition = hitPosition;
-                this.hitPosition.y = 0;
-                AudioManager.instance.PlayBGM(AudioBGM.TANK_MOVE, 0.15f);
-                tankAnim.SetBool("IsMove", true);
-            }
+            tankNavMesh.isStopped = false;
+            canMove = true;
+            this.hitPosition = hitPosition;
+            this.hitPosition.y = 0;
+            AudioManager.instance.PlayBGM(AudioBGM.TANK_MOVE, 0.15f);
+            tankAnim.SetBool("IsMove", true);
         }
 
         public void PlayBlast()
         {
-            GameObject blast = Instantiate(blastPrefab);
-            blast.transform.position = blastPosition.position;
-            blast.GetComponent<ParticleSystem>().Play();
-            Invoke("GameOver", blast.GetComponent<ParticleSystem>().main.duration);
+            blastParticle.transform.position = blastPosition.position;
+            blastParticle.Play();
+            Invoke("GameOver", blastParticle.main.duration);
         }
         #endregion------------------------
 
