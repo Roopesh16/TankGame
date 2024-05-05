@@ -1,4 +1,5 @@
 using TankGame.Audio;
+using TankGame.Controllers;
 using TankGame.Main;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ namespace TankGame.Tank
         #endregion------------------------
 
         #region ------------ Private Variables ------------
+        private GameController gameController;
         private TankService tankService => GameService.Instance.TankService;
         private AudioService audioService => GameService.Instance.AudioService;
 
