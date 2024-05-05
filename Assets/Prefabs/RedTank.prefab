@@ -179,7 +179,6 @@ GameObject:
   - component: {fileID: 2474124026571848181}
   - component: {fileID: 8716662833898294003}
   - component: {fileID: 8716662833898294007}
-  - component: {fileID: 8716662833898293992}
   - component: {fileID: 8716662833898293994}
   - component: {fileID: 8716662833898293993}
   m_Layer: 2
@@ -290,30 +289,9 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8716662833898293992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5217850342918984302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99aecabbf19ad0840a4d3490e73c442a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingPosition: {fileID: 0}
-  gunView: {fileID: 8716662834326466833}
-  blastPosition: {fileID: 8716662834948033047}
-  blastPrefab: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664,
-    type: 3}
-  gameController: {fileID: 0}
-  movementDuration: 2
-  tankVelocity: 3
-  minimumDistance: 2
 --- !u!95 &8716662833898293994
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -330,7 +308,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!195 &8716662833898293993
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -449,7 +428,6 @@ GameObject:
   - component: {fileID: 5017779125983050605}
   - component: {fileID: 6571527836204259931}
   - component: {fileID: 8716662834326466832}
-  - component: {fileID: 8716662834326466833}
   m_Layer: 2
   m_Name: TankGun
   m_TagString: Untagged
@@ -537,27 +515,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5981544062969976662, guid: 3d210b2be9d4b9144b53828dfc2e73e3, type: 3}
---- !u!114 &8716662834326466833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5818564887304115520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 700d36cdc47365e4cbd92d4ccae08ec4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootingPoint: {fileID: 8716662834852665989}
-  bulletPrefab: {fileID: 8362787410197010642, guid: 08338119ba0c943449889713a3e36f21,
-    type: 3}
-  maxWallDistance: 7
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  bulletSpeed: 10
-  canFire: 0
 --- !u!1 &6551868816387715455
 GameObject:
   m_ObjectHideFlags: 0
