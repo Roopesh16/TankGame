@@ -1,9 +1,11 @@
-using TankGame.Managers;
+using TankGame.Audio;
+using TankGame.Main;
 using TankGame.Tank;
 using UnityEngine;
 
 public class MineView : MonoBehaviour
 {
+    private AudioService audioService = GameService.Instance.AudioService;
     #region ------------ Private Methods ------------
     private void OnTriggerEnter(Collider other)
     {
@@ -11,7 +13,7 @@ public class MineView : MonoBehaviour
         {
             other.GetComponent<TankView>().PlayBlast();
             other.gameObject.SetActive(false);
-            AudioManager.instance.PlaySFX(AudioSFX.MINE_EXPLODE, 0.5f);
+            audioService.PlaySFX(AudioSFX.MINE_EXPLODE, 0.5f);
             gameObject.SetActive(false);
         }
     }
