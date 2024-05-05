@@ -1,3 +1,4 @@
+using TankGame.Audio;
 using TankGame.Main;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ namespace TankGame.Tank
 
         #region ------------ Private Variables ------------
         private TankService tankService => GameService.Instance.TankService;
+        private AudioService audioService => GameService.Instance.AudioService;
 
         #endregion------------------------
 
@@ -43,6 +45,14 @@ namespace TankGame.Tank
         public void SetTankState(TankState tankState) => tankService.SetTankState(tankState);
 
         public void MoveTank(Vector3 hitPosition) => tankView.MoveTank(hitPosition);
+
+        public void OnGameOver()
+        {
+            audioService.SetBGMMute();
+            gameController.OnGameOver();
+        }
+
+        public void SetAudio(AudioBGM audioBGM, float volume = 0.5f) => audioService.PlayBGM(audioBGM, volume);
         #endregion------------------------
     }
 }

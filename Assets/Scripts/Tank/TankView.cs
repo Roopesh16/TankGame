@@ -1,5 +1,4 @@
 using TankGame.Controllers;
-using TankGame.Managers;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -43,7 +42,7 @@ namespace TankGame.Tank
                         gunView.FireBullet();
                     }
                     tankAnim.SetBool("IsMove", false);
-                    AudioManager.instance.PlayBGM(AudioBGM.TANK_IDLE, 0.8f);
+                    tankController.SetAudio(Audio.AudioBGM.TANK_IDLE, 0.8f);
                     tankController.SetTankState(TankState.REST);
                 }
             }
@@ -55,7 +54,7 @@ namespace TankGame.Tank
 
         public void SetupTankView()
         {
-            AudioManager.instance.PlayBGM(AudioBGM.TANK_IDLE, 0.8f);
+            tankController.SetAudio(Audio.AudioBGM.TANK_IDLE, 0.8f);
             tankAnim.SetBool("IsMove", false);
             transform.localPosition = startingPosition.position;
         }
@@ -66,7 +65,7 @@ namespace TankGame.Tank
             canMove = true;
             this.hitPosition = hitPosition;
             this.hitPosition.y = 0;
-            AudioManager.instance.PlayBGM(AudioBGM.TANK_MOVE, 0.15f);
+            tankController.SetAudio(Audio.AudioBGM.TANK_MOVE, 0.15f);
             tankAnim.SetBool("IsMove", true);
         }
 
