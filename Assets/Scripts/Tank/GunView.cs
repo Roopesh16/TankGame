@@ -1,3 +1,4 @@
+using TankGame.Audio;
 using TankGame.Main;
 using TankGame.Managers;
 using UnityEngine;
@@ -21,6 +22,7 @@ namespace TankGame.Tank
         private GameObject bullet;
         private RaycastHit wallHit;
         private TankService tankService => GameService.Instance.TankService;
+        private AudioService audioService => GameService.Instance.AudioService;
         #endregion------------------------
 
         #region ------------ Public Variables ------------
@@ -52,7 +54,7 @@ namespace TankGame.Tank
             canFire = true;
             bullet = Instantiate(bulletPrefab);
             bullet.transform.position = shootingPoint.position;
-            AudioManager.instance.PlaySFX(AudioSFX.TANK_SHOT, 0.5f);
+            audioService.PlaySFX(AudioSFX.TANK_SHOT, 0.5f);
         }
         #endregion------------------------
     }
