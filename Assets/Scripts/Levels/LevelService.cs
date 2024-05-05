@@ -1,48 +1,39 @@
-using UnityEngine;
-using UnityEngine.UI;
 using System.Threading.Tasks;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-namespace TankGame.Managers
+namespace TankGame.Levels
 {
-    public class LevelManager : MonoBehaviour
+    public class LevelService
     {
         #region ------------ Serialized Variables ------------
-        [SerializeField] private GameObject loadingCanvas;
-        [SerializeField] private Image progressBar;
+        private GameObject loadingCanvas;
+        private Image progressBar;
+
         #endregion------------------------
+
         #region ------------ Public Variables ------------
-        public static LevelManager instance = null;
+        public static LevelService instance = null;
+
         #endregion------------------------
 
         #region ------------ Private Variables ------------
         private float targetFill;
-        
-        #endregion------------------------
 
-        #region ------------ Monobehavior Methods ------------
-        private void Awake()
-        {
-            if (instance == null)
-            {
-                instance = this;
-            }
-            else if (instance != this)
-            {
-                Destroy(gameObject);
-            }
-        }
         #endregion------------------------
-
-        // Update is called once per frame
         void Update()
         {
             progressBar.fillAmount = Mathf.MoveTowards(progressBar.fillAmount, targetFill, 3 * Time.deltaTime);
         }
-        #region ------------ Private Methods ------------
-        #endregion------------------------
 
         #region ------------ Public Methods ------------
+        public LevelService(GameObject loadingCanvas, Image progressBar)
+        {
+            this.loadingCanvas = loadingCanvas;
+            this.progressBar = progressBar;
+        }
+
         public async void LoadScene(string sceneName)
         {
             targetFill = 0f;
@@ -62,8 +53,6 @@ namespace TankGame.Managers
             scene.allowSceneActivation = true;
             loadingCanvas.SetActive(false);
         }
-
-       
         #endregion------------------------
     }
 }
