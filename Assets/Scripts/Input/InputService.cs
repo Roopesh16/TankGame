@@ -19,7 +19,7 @@ namespace TankGame.Inputs
 
         public void Update()
         {
-            if (GameManager.instance.GetGameState() == GameState.PLAY)
+            if (GameManager.Instance.GetGameState() == GameState.PLAY)
             {
                 if (Input.GetMouseButtonDown(0) && tankService.GetTankState() == TankState.REST)
                 {
