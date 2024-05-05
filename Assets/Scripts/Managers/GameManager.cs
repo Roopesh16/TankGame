@@ -1,14 +1,11 @@
 using TankGame.Models;
+using TankGame.Utility;
 using UnityEngine;
 
 namespace TankGame.Managers
 {
-    public class GameManager : MonoBehaviour
+    public class GameManager : GenericMonoSingleton<GameManager>
     {
-        #region ------------ Public Variables ------------
-        public static GameManager instance = null;
-        #endregion------------------------
-
         #region ------------ Private Variables ------------
         private GameState gameState = GameState.NONE;
         private string currentScene = null;
@@ -17,18 +14,9 @@ namespace TankGame.Managers
         #endregion------------------------
 
         #region ------------ Monobehavior Methods ------------
-        void Awake()
+        protected override void Awake()
         {
-            if (instance == null)
-            {
-                instance = this;
-            }
-
-            else if (instance != this)
-            {
-                Destroy(gameObject);
-            }
-            DontDestroyOnLoad(gameObject);
+            base.Awake();
             unlockedLevel = PlayerPrefs.GetInt("Level", 1);
         }
         #endregion------------------------
@@ -43,8 +31,6 @@ namespace TankGame.Managers
         {
             this.gameState = gameState;
         }
-
-
 
         public void SetCurrentScene(string sceneName)
         {
