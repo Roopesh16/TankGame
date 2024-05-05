@@ -1,31 +1,23 @@
-using UnityEngine;
-using TankGame.Views;
 using System.Collections.Generic;
+using TankGame.Controllers;
 
-namespace TankGame.Controllers
+namespace TankGame.Wall
 {
-    public class WallController : MonoBehaviour
+    public class WallController
     {
         #region ------------ Serialize Variables ------------
-        [SerializeField]
         private List<WallView> walls = new List<WallView>();
-        [SerializeField] private GameController gameController;
-        [SerializeField] private CameraController cameraController;
+        private GameController gameController;
         #endregion------------------------
 
         #region ------------ Private Variables ------------
         private int currentWall = 0;
         #endregion------------------------
 
-        #region ------------ Public Variables ------------
-        #endregion------------------------
-
-        #region ------------ Monobehavior Methods ------------
-        #endregion------------------------
-
         #region ------------ Public Methods ------------
-        public void OnGameStart()
+        public void SetWallController(List<WallView> walls)
         {
+            this.walls = walls;
             InitiateAllWalls();
         }
 
