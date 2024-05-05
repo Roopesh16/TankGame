@@ -1,15 +1,18 @@
-using UnityEngine;
+using TankGame.Main;
 using TankGame.Managers;
+using UnityEngine;
 
-namespace TankGame.Views
+namespace TankGame.Levels
 {
     public class LevelBtnView : MonoBehaviour
     {
+        private LevelService levelService => GameService.Instance.LevelService;
+
         public void LoadScene(string sceneName)
         {
-            GameManager.instance.SetLevel(sceneName[sceneName.Length - 1]);
-            GameManager.instance.SetCurrentScene(sceneName);
-            LevelManager.instance.LoadScene(sceneName);
+            GameManager.Instance.SetLevel(sceneName[sceneName.Length - 1]);
+            GameManager.Instance.SetCurrentScene(sceneName);
+            levelService.LoadScene(sceneName);
         }
     }
 }
