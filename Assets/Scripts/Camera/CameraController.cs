@@ -1,9 +1,8 @@
+using TankGame.Main;
+using TankGame.Tank;
 using UnityEngine;
-using TankGame.Managers;
-using TankGame.Models;
-using System.Collections;
 
-namespace TankGame.Controllers
+namespace TankGame.Cameras
 {
     public class CameraController : MonoBehaviour
     {
@@ -14,6 +13,7 @@ namespace TankGame.Controllers
         #endregion------------------------
         #region ------------ Private Variables ------------
         private Vector3 offset;
+        private TankService tankService => GameService.Instance.TankService;
 
         #endregion------------------------
 
@@ -24,7 +24,7 @@ namespace TankGame.Controllers
         }
         void LateUpdate()
         {
-            if (GameManager.instance.GetTankState() == TankState.MOVING)
+            if (tankService.GetTankState() == TankState.MOVING)
             {
                 Vector3 targetPosition = tank.position + offset;
                 transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing * Time.deltaTime);
