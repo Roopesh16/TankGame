@@ -1,7 +1,7 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
-namespace TankGame.Managers
+namespace TankGame.Audio
 {
     public enum AudioSFX
     {
@@ -17,45 +17,32 @@ namespace TankGame.Managers
         THEME
     }
 
-    public class AudioManager : MonoBehaviour
+    public class AudioService
     {
-        #region ------------ Serialize Variables ------------
-        [SerializeField]
-        private List<AudioClip> sfxList = new List<AudioClip>();
-        [SerializeField]
-        private List<AudioClip> bgmList = new List<AudioClip>();
-        #endregion------------------------
-
         #region ------------ Private Variables ------------
         private bool isSfxMute = false;
         private AudioSource sfxSource;
         private AudioSource bgmSource;
+        private List<AudioClip> sfxList = new List<AudioClip>();
+        private List<AudioClip> bgmList = new List<AudioClip>();
         #endregion------------------------
 
-        #region ------------ Public Variables ------------
-        public static AudioManager instance = null;
-        #endregion------------------------
 
         #region ------------ Monobehavior Methods ------------
-        void Awake()
+        public AudioService(AudioSource sfxSource, AudioSource bgmSource, List<AudioClip> sfxList,
+                            List<AudioClip> bgmList)
         {
-            if (instance == null)
-            {
-                instance = this;
-            }
-            else if (instance != this)
-            {
-                Destroy(gameObject);
-            }
-            DontDestroyOnLoad(this);
+            this.sfxSource = sfxSource;
+            this.bgmSource = bgmSource;
+            this.sfxList = sfxList;
+            this.bgmList = bgmList;
+            Init();
         }
 
-        private void Start()
+        private void Init()
         {
-            sfxSource = gameObject.AddComponent<AudioSource>();
             sfxSource.loop = false;
             sfxSource.playOnAwake = false;
-            bgmSource = gameObject.AddComponent<AudioSource>();
             bgmSource.loop = true;
             bgmSource.playOnAwake = true;
         }
