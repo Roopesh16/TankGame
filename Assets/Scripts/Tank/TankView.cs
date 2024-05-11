@@ -13,6 +13,7 @@ namespace TankGame.Tank
         [SerializeField] private Transform blastPosition;
         [SerializeField] private ParticleSystem blastParticle;
         [SerializeField] private GameController gameController;
+        [SerializeField] private float rotationSpeed = 60f;
 
         [SerializeField] private NavMeshAgent tankNavMesh;
         [SerializeField] private Animator tankAnim;
@@ -45,6 +46,8 @@ namespace TankGame.Tank
                     tankController.SetAudio(Audio.AudioBGM.TANK_IDLE, 0.8f);
                     tankController.SetTankState(TankState.REST);
                 }
+
+                transform.RotateAround(transform.position, transform.up, rotationSpeed * Time.deltaTime);
             }
         }
         #endregion------------------------
