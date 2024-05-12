@@ -51,10 +51,7 @@ namespace TankGame.Main
             CreateServices();
         }
 
-        private void Update()
-        {
-            InputService?.Update();
-        }
+        private void Update() => InputService?.Update();
 
         private void CreateServices()
         {
