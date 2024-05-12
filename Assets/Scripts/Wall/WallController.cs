@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using TankGame.Controllers;
 
 namespace TankGame.Wall
 {
@@ -7,7 +6,6 @@ namespace TankGame.Wall
     {
         #region ------------ Serialize Variables ------------
         private List<WallView> walls = new List<WallView>();
-        private GameController gameController;
         #endregion------------------------
 
         #region ------------ Private Variables ------------
@@ -25,7 +23,7 @@ namespace TankGame.Wall
         {
             if (walls[walls.Count - 1].isActiveAndEnabled == false)
             {
-                gameController.OnLevelComplete();
+                //gameController.OnLevelComplete();
             }
         }
         #endregion------------------------

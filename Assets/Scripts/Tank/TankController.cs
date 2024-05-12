@@ -1,5 +1,4 @@
 using TankGame.Audio;
-using TankGame.Controllers;
 using TankGame.Main;
 using UnityEngine;
 
@@ -14,7 +13,6 @@ namespace TankGame.Tank
         #endregion------------------------
 
         #region ------------ Private Variables ------------
-        private GameController gameController;
         private TankService tankService => GameService.Instance.TankService;
         private AudioService audioService => GameService.Instance.AudioService;
 
@@ -51,7 +49,7 @@ namespace TankGame.Tank
         public void OnGameOver()
         {
             audioService.SetBGMMute();
-            gameController.OnGameOver();
+            //gameController.OnGameOver();
         }
 
         public void SetAudio(AudioBGM audioBGM, float volume = 0.5f) => audioService.PlayBGM(audioBGM, volume);

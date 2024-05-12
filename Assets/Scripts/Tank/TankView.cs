@@ -1,4 +1,3 @@
-using TankGame.Controllers;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,7 +11,6 @@ namespace TankGame.Tank
         [SerializeField] private GunView gunView;
         [SerializeField] private Transform blastPosition;
         [SerializeField] private ParticleSystem blastParticle;
-        [SerializeField] private GameController gameController;
         [SerializeField] private float rotationSpeed = 60f;
 
         [SerializeField] private NavMeshAgent tankNavMesh;
