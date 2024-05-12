@@ -72,8 +72,7 @@ namespace TankGame.Levels
         {
             UnlockLevel();
             GameManager.Instance.SetGameState(GameState.GAMEOVER);
-            AudioService.instance.SetBGMMute();
-            gameView.OnLevelComplete();
+            eventService.OnLevelComplete.Invoke();
         }
 
         public void SetLevel(int level)
