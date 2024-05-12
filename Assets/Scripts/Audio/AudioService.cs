@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using TankGame.Events;
+using TankGame.Main;
 using UnityEngine;
 
 namespace TankGame.Audio
@@ -25,6 +27,7 @@ namespace TankGame.Audio
         private AudioSource bgmSource;
         private List<AudioClip> sfxList = new List<AudioClip>();
         private List<AudioClip> bgmList = new List<AudioClip>();
+        private EventService eventService => GameService.Instance.EventService;
         #endregion------------------------
 
 
@@ -46,6 +49,10 @@ namespace TankGame.Audio
             bgmSource.loop = true;
             bgmSource.playOnAwake = true;
         }
+        #endregion------------------------
+
+        #region ------------ Private Methods ------------
+        private void SubscribeToEvents() => eventService.OnGameOver.AddListener(SetBGMMute);
         #endregion------------------------
 
         #region ------------ Public Methods ------------
