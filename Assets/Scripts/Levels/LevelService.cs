@@ -1,5 +1,7 @@
 using System;
 using System.Threading.Tasks;
+using TankGame.Managers;
+using TankGame.States;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -68,10 +70,10 @@ namespace TankGame.Levels
 
         public void OnLevelComplete()
         {
-            //GameManager.instance.UnlockLevel();
-            //GameManager.instance.SetGameState(GameState.GAMEOVER);
-            //AudioService.instance.SetBGMMute();
-            //gameView.OnLevelComplete();
+            UnlockLevel();
+            GameManager.Instance.SetGameState(GameState.GAMEOVER);
+            AudioService.instance.SetBGMMute();
+            gameView.OnLevelComplete();
         }
 
         public void SetLevel(int level)
