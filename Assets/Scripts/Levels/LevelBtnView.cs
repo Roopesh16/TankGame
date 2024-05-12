@@ -10,7 +10,7 @@ namespace TankGame.Levels
 
         public void LoadScene(string sceneName)
         {
-            GameManager.Instance.SetLevel(sceneName[sceneName.Length - 1]);
+            levelService.SetLevel(sceneName[sceneName.Length - 1]);
             GameManager.Instance.SetCurrentScene(sceneName);
             levelService.LoadScene(sceneName);
         }
