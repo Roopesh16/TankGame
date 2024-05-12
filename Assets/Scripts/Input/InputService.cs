@@ -27,7 +27,7 @@ namespace TankGame.Inputs
 
                     if (Physics.Raycast(ray, out rayHit, maxHitDistance))
                     {
-                        if (rayHit.collider.tag == GameStrings.baseString)
+                        if (rayHit.collider.tag == GameStrings.BASE_STRING)
                         {
                             tankService.SetTankState(TankState.MOVING);
                             tankService.MoveTank(rayHit.point);

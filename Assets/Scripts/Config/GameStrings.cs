@@ -1,7 +1,8 @@
 public static class GameStrings
 {
-    public const string bulletString = "Bullet";
-    public const string tankString = "Tank";
-    public const string baseString = "Base";
-    public const string menuSceneString = "MenuScene";
+    public const string BULLET_STRING = "Bullet";
+    public const string TANK_STRING = "Tank";
+    public const string BASE_STRING = "Base";
+    public const string MENU_STRING = "MenuScene";
+    public const string LEVEL_STRING = "Level";
 }

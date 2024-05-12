@@ -9,7 +9,7 @@ public class MineView : MonoBehaviour
     #region ------------ Private Methods ------------
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == GameStrings.tankString)
+        if (other.tag == GameStrings.TANK_STRING)
         {
             other.GetComponent<TankView>().PlayBlast();
             other.gameObject.SetActive(false);

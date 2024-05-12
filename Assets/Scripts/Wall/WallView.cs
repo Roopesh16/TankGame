@@ -31,7 +31,7 @@ namespace TankGame.Wall
         #region ------------ Private Methods ------------
         private void OnTriggerEnter(Collider other)
         {
-            if (other.tag == GameStrings.bulletString)
+            if (other.tag == GameStrings.BULLET_STRING)
             {
                 audioService.PlaySFX(AudioSFX.WALL_BREAK, 0.5f);
                 //gameView.SetScoreText(wallScore);
