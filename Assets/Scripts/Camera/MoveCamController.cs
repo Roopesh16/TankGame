@@ -1,18 +1,17 @@
-using UnityEngine;
-using TankGame.Views;
-using TankGame.Models;
-using TankGame.Managers;
 using System.Collections;
+using TankGame.Main;
+using TankGame.Tank;
+using UnityEngine;
 
-namespace TankGame.Controllers
+namespace TankGame.Cameras
 {
     public class MoveCamController : MonoBehaviour
     {
         [SerializeField] private Transform finalCamPosition;
         [SerializeField] private float movementTime = 2f;
-        [SerializeField] private GameView gameView;
 
         private Vector3 currentCamPosition;
+        private TankService tankService => GameService.Instance.TankService;
         #region ------------ Public Methods ------------
         public IEnumerator MoveCamera()
         {
@@ -40,16 +39,16 @@ namespace TankGame.Controllers
 
         public void ShowMineInfo()
         {
-            GameManager.instance.SetTankState(TankState.DISABLE);
+            tankService.SetTankState(TankState.DISABLE);
             StartCoroutine(MoveCamera());
-            gameView.DisplayMineInfo();
+            //gameView.DisplayMineInfo();
         }
 
         public void HideMineInfo()
         {
             StartCoroutine(ResetCamera());
-            gameView.HideMineInfo();
-            GameManager.instance.SetTankState(TankState.REST);
+            //gameView.HideMineInfo();
+            tankService.SetTankState(TankState.REST);
         }
         #endregion------------------------
     }
