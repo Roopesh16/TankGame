@@ -52,7 +52,11 @@ namespace TankGame.Audio
         #endregion------------------------
 
         #region ------------ Private Methods ------------
-        private void SubscribeToEvents() => eventService.OnGameOver.AddListener(SetBGMMute);
+        private void SubscribeToEvents()
+        {
+            eventService.OnGameOver.AddListener(SetBGMMute);
+            eventService.OnLevelComplete.AddListener(SetBGMMute);
+        }
         #endregion------------------------
 
         #region ------------ Public Methods ------------
