@@ -32,6 +32,5 @@ namespace TankGame.Cameras
         }
         #endregion------------------------
 
-
     }
 }

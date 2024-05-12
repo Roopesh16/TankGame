@@ -12,7 +12,6 @@ using UnityEngine.UI;
 
 namespace TankGame.Main
 {
-
     public class GameService : GenericMonoSingleton<GameService>
     {
         [Header("Input Service")]
