@@ -1,8 +1,11 @@
-﻿public enum GameState
+﻿namespace TankGame.States
 {
-    NONE,
-    MENU,
-    PLAY,
-    PAUSE,
-    GAMEOVER
+    public enum GameState
+    {
+        NONE,
+        MENU,
+        PLAY,
+        PAUSE,
+        GAMEOVER
+    }
 }
