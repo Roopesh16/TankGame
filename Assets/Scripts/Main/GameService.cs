@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using TankGame.Audio;
+using TankGame.Events;
 using TankGame.Inputs;
 using TankGame.Levels;
 using TankGame.Tank;
@@ -41,6 +42,7 @@ namespace TankGame.Main
         public LevelService LevelService { get; private set; }
         public WallService WallService { get; private set; }
         public InputService InputService { get; private set; }
+        public EventService EventService { get; private set; }
 
         public UIService UIService => uiService;
 
@@ -57,6 +59,7 @@ namespace TankGame.Main
 
         private void CreateServices()
         {
+            EventService = new EventService();
             InputService = new InputService(maxHitDistance);
             TankService = new TankService(tankPrefab);
             AudioService = new AudioService(sfxSource, bgmSource, sfxList, bgmList);
