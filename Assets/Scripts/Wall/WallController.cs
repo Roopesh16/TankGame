@@ -3,7 +3,6 @@ using TankGame.Audio;
 using TankGame.Cameras;
 using TankGame.Levels;
 using TankGame.Main;
-using TankGame.Models;
 using TankGame.UI;
 using UnityEngine;
 
@@ -11,8 +10,8 @@ namespace TankGame.Wall
 {
     public class WallController
     {
+        private WallModel wallModel;
         private List<WallView> walls = new List<WallView>();
-
         private int currentWall = 0;
         private int currentMaxWalls;
 
@@ -21,9 +20,12 @@ namespace TankGame.Wall
         private AudioService audioService => GameService.Instance.AudioService;
         private UIService uIService => GameService.Instance.UIService;
 
+        public WallController() => wallModel.SetController(this);
+
         public void SetWallController(List<WallView> walls)
         {
             this.walls = walls;
+            currentWall = 0;
             currentMaxWalls = walls.Count;
             InitiateAllWalls();
         }
@@ -41,8 +43,8 @@ namespace TankGame.Wall
             if (other.tag == GameStrings.BULLET_STRING)
             {
                 audioService.PlaySFX(AudioSFX.WALL_BREAK, 0.5f);
-                uIService.SetScoreText(wallView.WallScore);
-                other.gameObject.SetActive(false);
+                uIService.SetScoreText(wallView.WallPoint);
+                wallView.gameObject.SetActive(false);
                 other.SetActive(false);
                 if (wallView.WallType == WallType.SMALL && levelService.GetLevel() == 49)
                 {
@@ -56,11 +58,14 @@ namespace TankGame.Wall
             }
         }
 
+        public int GetWallPoint(WallType wallType) => wallModel.GetWallPoint(wallType);
+
         private void InitiateAllWalls()
         {
             foreach (WallView wall in walls)
             {
-                wall.OnGameStart();
+                wall.SetWallController(this);
+                wall.SetWallPoint();
             }
         }
     }
