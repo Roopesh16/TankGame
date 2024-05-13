@@ -8,13 +8,17 @@ namespace TankGame.Tank
         #region ------------ Serialize Variables ------------
         [Header("References")]
         [SerializeField] private Transform startingPosition;
-        [SerializeField] private GunView gunView;
         [SerializeField] private Transform blastPosition;
         [SerializeField] private ParticleSystem blastParticle;
         [SerializeField] private float rotationSpeed = 60f;
 
         [SerializeField] private NavMeshAgent tankNavMesh;
         [SerializeField] private Animator tankAnim;
+
+        public NavMeshAgent Agent => tankNavMesh;
+        public Animator Animator => tankAnim;
+        public Vector3 HitPosition => hitPosition;
+        public float RotationSpeed => rotationSpeed;
         #endregion------------------------
 
         #region ------------ Private Variables ------------
@@ -29,23 +33,7 @@ namespace TankGame.Tank
         {
             if (canMove)
             {
-                tankNavMesh.SetDestination(hitPosition);
-
-                if (Vector3.Distance(hitPosition, transform.position) <= tankController.GetMinDistance())
-                {
-                    tankNavMesh.isStopped = true;
-                    canMove = false;
-                    if (gunView.IsWallPresent())
-                    {
-                        tankController.SetTankState(TankState.FIRE);
-                        gunView.FireBullet();
-                    }
-                    tankAnim.SetBool("IsMove", false);
-                    tankController.SetAudio(Audio.AudioBGM.TANK_IDLE, 0.8f);
-                    tankController.SetTankState(TankState.REST);
-                }
-
-                transform.RotateAround(transform.position, transform.up, rotationSpeed * Time.deltaTime);
+                tankController.MoveTank();
             }
         }
         #endregion------------------------
@@ -60,14 +48,10 @@ namespace TankGame.Tank
             transform.localPosition = startingPosition.position;
         }
 
-        public void MoveTank(Vector3 hitPosition)
+        public void SetHitPosition(Vector3 hitPosition)
         {
-            tankNavMesh.isStopped = false;
-            canMove = true;
             this.hitPosition = hitPosition;
-            this.hitPosition.y = 0;
-            tankController.SetAudio(Audio.AudioBGM.TANK_MOVE, 0.15f);
-            tankAnim.SetBool("IsMove", true);
+            hitPosition.y = 0;
         }
 
         public void PlayBlast()
@@ -76,13 +60,12 @@ namespace TankGame.Tank
             blastParticle.Play();
             Invoke("GameOver", blastParticle.main.duration);
         }
+
+        public void ToggleMove(bool canMove) => this.canMove = canMove;
         #endregion------------------------
 
         #region ------------ Private Methods ------------
-        private void GameOver()
-        {
-            tankController.OnGameOver();
-        }
+        private void GameOver() => tankController.OnGameOver();
         #endregion------------------------
     }
 }
