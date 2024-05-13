@@ -14,6 +14,8 @@ namespace TankGame.Wall
         private List<WallView> walls = new List<WallView>();
         private int currentWall = 0;
         private int currentMaxWalls;
+        private const int LEVEL_ONE = 1;
+        private const int LEVEL_FOUR = 4;
 
         private MoveCamController moveCamController;
         private LevelService levelService => GameService.Instance.LevelService;
@@ -46,11 +48,11 @@ namespace TankGame.Wall
                 uIService.SetScoreText(wallView.WallPoint);
                 wallView.gameObject.SetActive(false);
                 other.SetActive(false);
-                if (wallView.WallType == WallType.SMALL && levelService.GetLevel() == 49)
+                if (wallView.WallType == WallType.SMALL && levelService.GetLevel() == LEVEL_ONE)
                 {
                     moveCamController.ShowMineInfo();
                 }
-                if (wallView.WallType == WallType.SMALL && levelService.GetLevel() == 52)
+                if (wallView.WallType == WallType.SMALL && levelService.GetLevel() == LEVEL_FOUR)
                 {
                     moveCamController.ShowMineInfo();
                 }
