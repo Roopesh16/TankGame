@@ -1,37 +1,61 @@
 using System.Collections.Generic;
+using TankGame.Audio;
+using TankGame.Cameras;
 using TankGame.Levels;
 using TankGame.Main;
+using TankGame.Models;
+using TankGame.UI;
+using UnityEngine;
 
 namespace TankGame.Wall
 {
     public class WallController
     {
-        #region ------------ Serialize Variables ------------
         private List<WallView> walls = new List<WallView>();
-        #endregion------------------------
 
-        #region ------------ Private Variables ------------
         private int currentWall = 0;
-        private LevelService levelService => GameService.Instance.LevelService;
-        #endregion------------------------
+        private int currentMaxWalls;
 
-        #region ------------ Public Methods ------------
+        private MoveCamController moveCamController;
+        private LevelService levelService => GameService.Instance.LevelService;
+        private AudioService audioService => GameService.Instance.AudioService;
+        private UIService uIService => GameService.Instance.UIService;
+
         public void SetWallController(List<WallView> walls)
         {
             this.walls = walls;
+            currentMaxWalls = walls.Count;
             InitiateAllWalls();
         }
 
-        public void CheckLastWall()
+        public void UpdateWallCount()
         {
-            if (walls[walls.Count - 1].isActiveAndEnabled == false)
-            {
+            if (currentWall < currentMaxWalls)
+                currentWall++;
+            else
                 levelService.OnLevelComplete();
+        }
+
+        public void DisableWall(WallView wallView, GameObject other)
+        {
+            if (other.tag == GameStrings.BULLET_STRING)
+            {
+                audioService.PlaySFX(AudioSFX.WALL_BREAK, 0.5f);
+                uIService.SetScoreText(wallView.WallScore);
+                other.gameObject.SetActive(false);
+                other.SetActive(false);
+                if (wallView.WallType == WallType.SMALL && levelService.GetLevel() == 49)
+                {
+                    moveCamController.ShowMineInfo();
+                }
+                if (wallView.WallType == WallType.SMALL && levelService.GetLevel() == 52)
+                {
+                    moveCamController.ShowMineInfo();
+                }
+                UpdateWallCount();
             }
         }
-        #endregion------------------------
 
-        #region ------------ Private Methods ------------
         private void InitiateAllWalls()
         {
             foreach (WallView wall in walls)
@@ -39,6 +63,5 @@ namespace TankGame.Wall
                 wall.OnGameStart();
             }
         }
-        #endregion------------------------
     }
 }
