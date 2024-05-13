@@ -32,7 +32,6 @@ namespace TankGame.UI
         [SerializeField] private Button aboutButton;
         [SerializeField] private Button aboutBackBtn;
 
-        private int maxLevel = 5;
         private int totalScore = 0;
 
         private AudioService audioService => GameService.Instance.AudioService;
