@@ -34,22 +34,7 @@ namespace TankGame.Wall
         #region ------------ Private Methods ------------
         private void OnTriggerEnter(Collider other)
         {
-            if (other.tag == GameStrings.BULLET_STRING)
-            {
-                audioService.PlaySFX(AudioSFX.WALL_BREAK, 0.5f);
-                uIService.SetScoreText(wallScore);
-                other.gameObject.SetActive(false);
-                gameObject.SetActive(false);
-                if (wallType == WallType.SMALL && levelService.GetLevel() == 49)
-                {
-                    moveCamController.ShowMineInfo();
-                }
-                if (wallType == WallType.SMALL && levelService.GetLevel() == 52)
-                {
-                    moveCamController.ShowMineInfo();
-                }
-                wallController.CheckLastWall();
-            }
+            wallController.DisableWall(other.gameObject);
         }
 
         private void SetWallScore()
