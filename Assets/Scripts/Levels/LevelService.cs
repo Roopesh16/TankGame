@@ -1,5 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using TankGame.Events;
+using TankGame.Main;
 using TankGame.Managers;
 using TankGame.States;
 using UnityEngine;
@@ -16,34 +19,47 @@ namespace TankGame.Levels
 
     public class LevelService
     {
-        #region ------------ Serialized Variables ------------
+        #region ------------ Private Variables ------------
         private GameObject loadingCanvas;
         private Image progressBar;
         private int currentLevel = 0;
         private int unlockedLevel = 1;
-
-        #endregion------------------------
-
-        #region ------------ Public Variables ------------
-        public static LevelService instance = null;
-
-        #endregion------------------------
-
-        #region ------------ Private Variables ------------
         private float targetFill;
+        private bool isFull = true;
+
+        private const int LOADING_DELAY = 100;
+        private const float MAX_PROGRESS = 0.9f;
+        private const int LOAD_SCENE_DELAY = 1000;
+        private const int FILL_RATE = 3;
+        private const int MAX_LEVELS = 5;
+        private List<LevelBtnView> levelButtons = new();
+
+        private EventService eventService => GameService.Instance.EventService;
 
         #endregion------------------------
-        void Update()
+
+        public void Update()
         {
-            progressBar.fillAmount = Mathf.MoveTowards(progressBar.fillAmount, targetFill, 3 * Time.deltaTime);
+            if (!isFull)
+            {
+                progressBar.fillAmount = Mathf.MoveTowards(progressBar.fillAmount, targetFill, FILL_RATE * Time.deltaTime);
+            }
         }
 
         #region ------------ Public Methods ------------
-        public LevelService(GameObject loadingCanvas, Image progressBar)
+        public LevelService(GameObject loadingCanvas, Image progressBar, List<LevelBtnView> levelButtons)
         {
             this.loadingCanvas = loadingCanvas;
             this.progressBar = progressBar;
-            unlockedLevel = PlayerPrefs.GetInt("Level", 1);
+            this.levelButtons = levelButtons;
+            unlockedLevel = PlayerPrefs.GetInt(GameStrings.LEVEL_STRING);
+            SetUnlockedButtons();
+        }
+
+        private void SetUnlockedButtons()
+        {
+            for (int i = 0; i < unlockedLevel; i++)
+                levelButtons[i].ToggleInteraction(true);
         }
 
         public async void LoadScene(string sceneName)
@@ -52,21 +68,20 @@ namespace TankGame.Levels
             progressBar.fillAmount = 0f;
             var scene = SceneManager.LoadSceneAsync(sceneName);
             scene.allowSceneActivation = false;
-
+            isFull = false;
             loadingCanvas.SetActive(true);
             do
             {
-                await Task.Delay(100);
+                await Task.Delay(LOADING_DELAY);
                 targetFill = scene.progress;
-            } while (scene.progress < 0.9f);
+            } while (scene.progress < MAX_PROGRESS);
 
-            await Task.Delay(1000);
+            await Task.Delay(LOAD_SCENE_DELAY);
 
+            isFull = true;
             scene.allowSceneActivation = true;
             loadingCanvas.SetActive(false);
         }
-
-
 
         public void OnLevelComplete()
         {
@@ -75,28 +90,23 @@ namespace TankGame.Levels
             eventService.OnLevelComplete.Invoke();
         }
 
-        public void SetLevel(int level)
-        {
-            currentLevel = level;
-        }
+        public void SetLevel(int level) => currentLevel = level;
 
-        public int GetLevel()
-        {
-            return currentLevel;
-        }
+        public int GetLevel() => currentLevel;
 
         public void UnlockLevel()
         {
-            unlockedLevel++;
-            PlayerPrefs.SetInt("Level", unlockedLevel);
-            PlayerPrefs.Save();
+            if (unlockedLevel < MAX_LEVELS)
+            {
+                unlockedLevel++;
+                PlayerPrefs.SetInt(GameStrings.LEVEL_STRING, unlockedLevel);
+                PlayerPrefs.Save();
+            }
+            else
+                unlockedLevel = MAX_LEVELS;
         }
 
-        public int GetUnlockedLevel()
-        {
-            return unlockedLevel;
-        }
-
+        public int GetUnlockedLevel() => unlockedLevel;
 
         #endregion------------------------
     }
