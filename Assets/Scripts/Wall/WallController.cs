@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using TankGame.Levels;
+using TankGame.Main;
 
 namespace TankGame.Wall
 {
@@ -10,6 +12,7 @@ namespace TankGame.Wall
 
         #region ------------ Private Variables ------------
         private int currentWall = 0;
+        private LevelService levelService => GameService.Instance.LevelService;
         #endregion------------------------
 
         #region ------------ Public Methods ------------
@@ -23,7 +26,7 @@ namespace TankGame.Wall
         {
             if (walls[walls.Count - 1].isActiveAndEnabled == false)
             {
-                //gameController.OnLevelComplete();
+                levelService.OnLevelComplete();
             }
         }
         #endregion------------------------
