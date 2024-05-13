@@ -15,10 +15,11 @@ namespace TankGame.Main
     public class GameService : GenericMonoSingleton<GameService>
     {
         [Header("Input Service")]
-        private float maxHitDistance = 5f;
+        [SerializeField] private float maxHitDistance = 5f;
 
         [Header("Tank Service")]
-        private TankView tankPrefab;
+        [SerializeField] private TankView tankPrefab;
+        [SerializeField] private GunView gunView;
 
         [Header("UI Service")]
         [SerializeField] private UIService uiService;
@@ -26,6 +27,7 @@ namespace TankGame.Main
         [Header("Level Service")]
         [SerializeField] private GameObject loadingCanvas;
         [SerializeField] private Image progressBar;
+        [SerializeField] private List<LevelBtnView> levelButtons = new();
 
         [Header("Wall Service")]
         [SerializeField] private List<WallData> levelWallList = new();
@@ -51,7 +53,11 @@ namespace TankGame.Main
             CreateServices();
         }
 
-        private void Update() => InputService?.Update();
+        private void Update()
+        {
+            InputService?.Update();
+            LevelService?.Update();
+        }
 
         private void CreateServices()
         {
@@ -59,7 +65,7 @@ namespace TankGame.Main
             InputService = new InputService(maxHitDistance);
             TankService = new TankService(tankPrefab);
             AudioService = new AudioService(sfxSource, bgmSource, sfxList, bgmList);
-            LevelService = new LevelService(loadingCanvas, progressBar);
+            LevelService = new LevelService(loadingCanvas, progressBar, levelButtons);
             WallService = new WallService();
         }
     }
