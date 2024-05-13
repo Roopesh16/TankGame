@@ -1,6 +1,7 @@
 using System.Collections;
 using TankGame.Main;
 using TankGame.Tank;
+using TankGame.UI;
 using UnityEngine;
 
 namespace TankGame.Cameras
@@ -12,6 +13,7 @@ namespace TankGame.Cameras
 
         private Vector3 currentCamPosition;
         private TankService tankService => GameService.Instance.TankService;
+        private UIService uIService => GameService.Instance.UIService;
         #region ------------ Public Methods ------------
         public IEnumerator MoveCamera()
         {
@@ -41,13 +43,13 @@ namespace TankGame.Cameras
         {
             tankService.SetTankState(TankState.DISABLE);
             StartCoroutine(MoveCamera());
-            //gameView.DisplayMineInfo();
+            uIService.SetMineInfo(true);
         }
 
         public void HideMineInfo()
         {
             StartCoroutine(ResetCamera());
-            //gameView.HideMineInfo();
+            uIService.SetMineInfo(false);
             tankService.SetTankState(TankState.REST);
         }
         #endregion------------------------
