@@ -96,7 +96,7 @@ namespace TankGame.UI
         public void SetScoreText(int score)
         {
             totalScore += score;
-            scoreText.text = scoreString + totalScore;
+            scoreText.text = GameStrings.SCORE_STRING + totalScore;
         }
 
         public void SetMineInfo(bool isActive) => mineInfo.SetActive(isActive);
