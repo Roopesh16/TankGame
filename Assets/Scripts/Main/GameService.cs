@@ -63,10 +63,10 @@ namespace TankGame.Main
         {
             EventService = new EventService();
             InputService = new InputService(maxHitDistance);
-            TankService = new TankService(tankPrefab);
+            TankService = new TankService(tankPrefab, gunView);
             AudioService = new AudioService(sfxSource, bgmSource, sfxList, bgmList);
             LevelService = new LevelService(loadingCanvas, progressBar, levelButtons);
-            WallService = new WallService();
+            WallService = new WallService(levelWallList);
         }
     }
 }
