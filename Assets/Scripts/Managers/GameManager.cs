@@ -1,6 +1,7 @@
-using TankGame.Models;
+using TankGame.Events;
+using TankGame.Main;
+using TankGame.States;
 using TankGame.Utility;
-using UnityEngine;
 
 namespace TankGame.Managers
 {
@@ -9,59 +10,31 @@ namespace TankGame.Managers
         #region ------------ Private Variables ------------
         private GameState gameState = GameState.NONE;
         private string currentScene = null;
-        private int currentLevel = 0;
-        private int unlockedLevel = 1;
+        private EventService eventService => GameService.Instance.EventService;
         #endregion------------------------
 
         #region ------------ Monobehavior Methods ------------
-        protected override void Awake()
-        {
-            base.Awake();
-            unlockedLevel = PlayerPrefs.GetInt("Level", 1);
-        }
+        protected override void Awake() => base.Awake();
         #endregion------------------------
 
         #region ------------ Public Methods ------------
-        public GameState GetGameState()
-        {
-            return this.gameState;
-        }
+        public GameState GetGameState() => gameState;
 
-        public void SetGameState(GameState gameState)
-        {
-            this.gameState = gameState;
-        }
+        public void SetGameState(GameState gameState) => this.gameState = gameState;
 
-        public void SetCurrentScene(string sceneName)
-        {
-            currentScene = sceneName;
-        }
+        public void SetCurrentScene(string sceneName) => currentScene = sceneName;
 
-        public string GetCurrentScene()
-        {
-            return currentScene;
-        }
+        public string GetCurrentScene() => currentScene;
 
-        public void SetLevel(int level)
+        public void OnGameOver()
         {
-            currentLevel = level;
+            SetGameState(GameState.GAMEOVER);
+            eventService.OnGameOver.Invoke();
         }
-
-        public int GetLevel()
+        public void OnLevelStart()
         {
-            return currentLevel;
-        }
-
-        public void UnlockLevel()
-        {
-            unlockedLevel++;
-            PlayerPrefs.SetInt("Level", unlockedLevel);
-            PlayerPrefs.Save();
-        }
-
-        public int GetUnlockedLevel()
-        {
-            return unlockedLevel;
+            SetGameState(GameState.PLAY);
+            eventService.OnLevelStart.Invoke(true);
         }
         #endregion------------------------
     }
