@@ -9,11 +9,17 @@ namespace TankGame.Levels
     {
         [SerializeField] private Button levelButton;
         [SerializeField] private int levelNumber;
+        [SerializeField] private string sceneName;
+
+        private void Awake()
+        {
+            levelButton.onClick.AddListener(LoadScene);
+        }
         private LevelService levelService => GameService.Instance.LevelService;
 
         public void ToggleInteraction(bool isInteractable) => levelButton.interactable = isInteractable;
 
-        public void LoadScene(string sceneName)
+        public void LoadScene()
         {
             levelService.SetLevel(levelNumber);
             GameManager.Instance.SetCurrentScene(sceneName);
