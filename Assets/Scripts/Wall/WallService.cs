@@ -12,11 +12,26 @@ namespace TankGame.Wall
     {
         private WallController wallController;
         private int currentLevel;
+        private List<WallData> levelWallList = new();
 
-        public void SetWallData(WallData wallData)
+
+        public WallService(List<WallData> levelWallList)
         {
-            wallController.SetWallController(wallData.walls);
-            currentLevel = wallData.levelNumber;
+            wallController = new();
+            this.levelWallList = levelWallList;
+        }
+
+        public void SetWallData(int level)
+        {
+            foreach (WallData wallData in levelWallList)
+            {
+                if (level == wallData.levelNumber)
+                {
+                    wallController.SetWallController(wallData.walls);
+                    currentLevel = wallData.levelNumber;
+                    return;
+                }
+            }
         }
     }
 }
