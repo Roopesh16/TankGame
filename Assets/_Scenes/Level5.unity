@@ -995,7 +995,7 @@ PrefabInstance:
         type: 3}
       propertyPath: moveCamController
       value: 
-      objectReference: {fileID: 1260880614}
+      objectReference: {fileID: 0}
     - target: {fileID: 4189566658741075115, guid: e04d988b8a58780438591bc18378a817,
         type: 3}
       propertyPath: m_RootOrder
@@ -2526,7 +2526,7 @@ PrefabInstance:
         type: 3}
       propertyPath: moveCamController
       value: 
-      objectReference: {fileID: 1260880614}
+      objectReference: {fileID: 0}
     - target: {fileID: 4189566658741075115, guid: e04d988b8a58780438591bc18378a817,
         type: 3}
       propertyPath: m_RootOrder
@@ -3852,7 +3852,7 @@ Transform:
   - {fileID: 631675662}
   - {fileID: 1294743783}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &297008604
 PrefabInstance:
@@ -9034,7 +9034,7 @@ PrefabInstance:
         type: 3}
       propertyPath: moveCamController
       value: 
-      objectReference: {fileID: 1260880614}
+      objectReference: {fileID: 0}
     - target: {fileID: 4189566658741075115, guid: e04d988b8a58780438591bc18378a817,
         type: 3}
       propertyPath: m_RootOrder
@@ -10849,7 +10849,7 @@ PrefabInstance:
         type: 3}
       propertyPath: moveCamController
       value: 
-      objectReference: {fileID: 1260880614}
+      objectReference: {fileID: 0}
     - target: {fileID: 7907518860947371993, guid: 5caa297598a487746af8ba90d05a247e,
         type: 3}
       propertyPath: m_RootOrder
@@ -12874,7 +12874,7 @@ PrefabInstance:
         type: 3}
       propertyPath: moveCamController
       value: 
-      objectReference: {fileID: 1260880614}
+      objectReference: {fileID: 0}
     - target: {fileID: 4189566658741075115, guid: e04d988b8a58780438591bc18378a817,
         type: 3}
       propertyPath: m_RootOrder
@@ -14329,7 +14329,7 @@ PrefabInstance:
         type: 3}
       propertyPath: moveCamController
       value: 
-      objectReference: {fileID: 1260880614}
+      objectReference: {fileID: 0}
     - target: {fileID: 6323201603637909731, guid: a2745e14a47090745ab50d5e068888b4,
         type: 3}
       propertyPath: m_Name
@@ -15363,7 +15363,7 @@ PrefabInstance:
         type: 3}
       propertyPath: moveCamController
       value: 
-      objectReference: {fileID: 1260880614}
+      objectReference: {fileID: 0}
     - target: {fileID: 7907518860947371993, guid: 5caa297598a487746af8ba90d05a247e,
         type: 3}
       propertyPath: m_RootOrder
@@ -19202,7 +19202,7 @@ Transform:
   - {fileID: 1559977362}
   - {fileID: 1283659028}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1240505559
 PrefabInstance:
@@ -19636,7 +19636,6 @@ GameObject:
   - component: {fileID: 1260880611}
   - component: {fileID: 1260880610}
   - component: {fileID: 1260880613}
-  - component: {fileID: 1260880614}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -19719,25 +19718,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1260880609}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d5e5394a6dae3e4496d55e98d0bba14, type: 3}
+  m_Script: {fileID: 11500000, guid: 315875d8ca382144597d84ea72123355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2129091134}
   smoothing: 5
---- !u!114 &1260880614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260880609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6813d7558f3a8f045b840d8dabc7270f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  finalCamPosition: {fileID: 1157149189}
-  movementTime: 2
 --- !u!1001 &1272698129
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19929,7 +19914,7 @@ PrefabInstance:
         type: 3}
       propertyPath: moveCamController
       value: 
-      objectReference: {fileID: 1260880614}
+      objectReference: {fileID: 0}
     - target: {fileID: 6323201603637909731, guid: a2745e14a47090745ab50d5e068888b4,
         type: 3}
       propertyPath: m_Name
@@ -24944,7 +24929,7 @@ PrefabInstance:
         type: 3}
       propertyPath: moveCamController
       value: 
-      objectReference: {fileID: 1260880614}
+      objectReference: {fileID: 0}
     - target: {fileID: 6323201603637909731, guid: a2745e14a47090745ab50d5e068888b4,
         type: 3}
       propertyPath: m_Name
@@ -25414,7 +25399,7 @@ PrefabInstance:
         type: 3}
       propertyPath: moveCamController
       value: 
-      objectReference: {fileID: 1260880614}
+      objectReference: {fileID: 0}
     - target: {fileID: 4189566658741075115, guid: e04d988b8a58780438591bc18378a817,
         type: 3}
       propertyPath: m_RootOrder
@@ -26334,7 +26319,7 @@ PrefabInstance:
         type: 3}
       propertyPath: moveCamController
       value: 
-      objectReference: {fileID: 1260880614}
+      objectReference: {fileID: 0}
     - target: {fileID: 6323201603637909731, guid: a2745e14a47090745ab50d5e068888b4,
         type: 3}
       propertyPath: m_Name
@@ -31880,7 +31865,7 @@ PrefabInstance:
         type: 3}
       propertyPath: moveCamController
       value: 
-      objectReference: {fileID: 1260880614}
+      objectReference: {fileID: 0}
     - target: {fileID: 6323201603637909731, guid: a2745e14a47090745ab50d5e068888b4,
         type: 3}
       propertyPath: m_Name
@@ -32949,37 +32934,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2110847359}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2112681036
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2112681037}
-  m_Layer: 0
-  m_Name: Starting Position
-  m_TagString: Untagged
-  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2112681037
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2112681036}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 172.8, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2113779054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33216,7 +33170,7 @@ PrefabInstance:
         type: 3}
       propertyPath: startingPosition
       value: 
-      objectReference: {fileID: 2112681037}
+      objectReference: {fileID: 0}
     - target: {fileID: 8716662833898293993, guid: 86c68481f6427e64fa235944ee3c08e0,
         type: 3}
       propertyPath: m_BaseOffset

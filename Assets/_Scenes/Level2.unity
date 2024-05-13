@@ -254,7 +254,7 @@ Transform:
   - {fileID: 1656587192}
   - {fileID: 1424366765}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &296499454
 PrefabInstance:
@@ -746,7 +746,7 @@ Transform:
   - {fileID: 2028656247}
   - {fileID: 644235078}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1260880609
 GameObject:
@@ -842,7 +842,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1260880609}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d5e5394a6dae3e4496d55e98d0bba14, type: 3}
+  m_Script: {fileID: 11500000, guid: 315875d8ca382144597d84ea72123355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tank: {fileID: 2129091134}
@@ -1375,37 +1375,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 462380974}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2112681036
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2112681037}
-  m_Layer: 0
-  m_Name: Starting Position
-  m_TagString: Untagged
-  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2112681037
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2112681036}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.74, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2129091133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1482,7 +1451,7 @@ PrefabInstance:
         type: 3}
       propertyPath: startingPosition
       value: 
-      objectReference: {fileID: 2112681037}
+      objectReference: {fileID: 0}
     - target: {fileID: 8716662833898293993, guid: 86c68481f6427e64fa235944ee3c08e0,
         type: 3}
       propertyPath: m_BaseOffset

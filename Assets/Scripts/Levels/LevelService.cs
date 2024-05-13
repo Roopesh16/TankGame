@@ -52,7 +52,7 @@ namespace TankGame.Levels
             this.loadingCanvas = loadingCanvas;
             this.progressBar = progressBar;
             this.levelButtons = levelButtons;
-            unlockedLevel = PlayerPrefs.GetInt(GameStrings.LEVEL_STRING);
+            unlockedLevel = PlayerPrefs.GetInt(GameStrings.LEVEL_STRING, 1);
             SetUnlockedButtons();
         }
 
@@ -99,6 +99,7 @@ namespace TankGame.Levels
             if (unlockedLevel < MAX_LEVELS)
             {
                 unlockedLevel++;
+                levelButtons[unlockedLevel - 1].ToggleInteraction(true);
                 PlayerPrefs.SetInt(GameStrings.LEVEL_STRING, unlockedLevel);
                 PlayerPrefs.Save();
             }

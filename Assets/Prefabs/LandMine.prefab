@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2106683075822250993}
   - component: {fileID: 7999134903756446581}
   - component: {fileID: 914920623689475466}
-  - component: {fileID: 8290233955893576693}
   - component: {fileID: 8290233955893576698}
+  - component: {fileID: 7594320452842445076}
   m_Layer: 0
   m_Name: LandMine
   m_TagString: Landmine
@@ -85,18 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8290233955893576693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1166259218292490775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3908431337593314d8b45690a525ffc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &8290233955893576698
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -111,3 +99,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8422885309708959081, guid: 3d210b2be9d4b9144b53828dfc2e73e3, type: 3}
+--- !u!114 &7594320452842445076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166259218292490775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8691faa2eb29be94bb8aff134463ea9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

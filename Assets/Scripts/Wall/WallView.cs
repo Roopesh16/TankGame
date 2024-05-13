@@ -17,7 +17,7 @@ namespace TankGame.Wall
         private WallController wallController;
         private int wallPoint;
         private AudioService audioService => GameService.Instance.AudioService;
-        private UIService uIService => GameService.Instance.UIService;
+        private MenuUIService uIService => GameService.Instance.MenuUIService;
         private LevelService levelService => GameService.Instance.LevelService;
 
         public int WallPoint => wallPoint;

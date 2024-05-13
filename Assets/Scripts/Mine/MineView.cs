@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MineView : MonoBehaviour
 {
-    private AudioService audioService = GameService.Instance.AudioService;
+    private AudioService audioService => GameService.Instance.AudioService;
     #region ------------ Private Methods ------------
     private void OnTriggerEnter(Collider other)
     {

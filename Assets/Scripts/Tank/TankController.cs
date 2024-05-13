@@ -1,7 +1,6 @@
 using TankGame.Audio;
 using TankGame.Main;
 using TankGame.Managers;
-using TankGame.UI;
 using UnityEngine;
 
 namespace TankGame.Tank
@@ -16,7 +15,6 @@ namespace TankGame.Tank
         #region ------------ Private Variables ------------
         private TankService tankService => GameService.Instance.TankService;
         private AudioService audioService => GameService.Instance.AudioService;
-        private UIService uIService => GameService.Instance.UIService;
 
         #endregion------------------------
 
@@ -57,7 +55,7 @@ namespace TankGame.Tank
         {
             tankView.Agent.SetDestination(tankView.HitPosition);
 
-            if (Vector3.Distance(tankView.HitPosition, tankView.transform.position) <= tankModel.MinimumDistance)
+            if (Vector3.Distance(tankView.HitPosition, tankView.Position) <= tankModel.MinimumDistance)
             {
                 tankView.Agent.isStopped = true;
                 tankView.ToggleMove(false);
@@ -72,8 +70,6 @@ namespace TankGame.Tank
                 SetAudio(AudioBGM.TANK_IDLE, 0.8f);
                 SetTankState(TankState.REST);
             }
-
-            tankView.transform.RotateAround(tankView.transform.position, tankView.transform.up, tankView.RotationSpeed * Time.deltaTime);
         }
 
         public void OnGameOver() => GameManager.Instance.OnGameOver();

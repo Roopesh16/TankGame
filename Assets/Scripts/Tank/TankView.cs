@@ -10,7 +10,6 @@ namespace TankGame.Tank
         [SerializeField] private GunView gunView;
         [SerializeField] private Transform blastPosition;
         [SerializeField] private ParticleSystem blastParticle;
-        [SerializeField] private float rotationSpeed = 60f;
 
         [SerializeField] private NavMeshAgent tankNavMesh;
         [SerializeField] private Animator tankAnim;
@@ -18,8 +17,8 @@ namespace TankGame.Tank
         public NavMeshAgent Agent => tankNavMesh;
         public Animator Animator => tankAnim;
         public Vector3 HitPosition => hitPosition;
-        public float RotationSpeed => rotationSpeed;
         public GunView Gun => gunView;
+        public Vector3 Position => transform.position;
         #endregion------------------------
 
         #region ------------ Private Variables ------------

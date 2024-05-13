@@ -1,3 +1,4 @@
+using Assets.Scripts.UI;
 using System.Collections.Generic;
 using TankGame.Audio;
 using TankGame.Events;
@@ -20,8 +21,11 @@ namespace TankGame.Main
         [Header("Tank Service")]
         [SerializeField] private TankView tankPrefab;
 
-        [Header("UI Service")]
-        [SerializeField] private UIService uiService;
+        [Header("Menu UI Service")]
+        [SerializeField] private MenuUIService menuUIService;
+
+        [Header("Gameplay UI Service")]
+        [SerializeField] private GameplayUIService gameplayUIService;
 
         [Header("Level Service")]
         [SerializeField] private GameObject loadingCanvas;
@@ -44,7 +48,8 @@ namespace TankGame.Main
         public InputService InputService { get; private set; }
         public EventService EventService { get; private set; }
 
-        public UIService UIService => uiService;
+        public MenuUIService MenuUIService => menuUIService;
+        public GameplayUIService GameplayUIService => gameplayUIService;
 
         protected void Awake()
         {
@@ -62,10 +67,10 @@ namespace TankGame.Main
         {
             EventService = new EventService();
             InputService = new InputService(maxHitDistance);
-            TankService = new TankService(tankPrefab);
             AudioService = new AudioService(sfxSource, bgmSource, sfxList, bgmList);
             LevelService = new LevelService(loadingCanvas, progressBar, levelButtons);
             WallService = new WallService(levelWallList);
+            TankService = new TankService(tankPrefab);
         }
     }
 }

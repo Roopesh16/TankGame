@@ -15,6 +15,7 @@ namespace TankGame.Levels
         {
             levelButton.onClick.AddListener(LoadScene);
         }
+
         private LevelService levelService => GameService.Instance.LevelService;
 
         public void ToggleInteraction(bool isInteractable) => levelButton.interactable = isInteractable;
@@ -23,6 +24,7 @@ namespace TankGame.Levels
         {
             levelService.SetLevel(levelNumber);
             GameManager.Instance.SetCurrentScene(sceneName);
+            GameManager.Instance.OnLevelStart();
             levelService.LoadScene(sceneName);
         }
     }

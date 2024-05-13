@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7907518860947371989}
   - component: {fileID: 7907518860947371990}
   - component: {fileID: 7907518860947371991}
-  - component: {fileID: 7907518860947371992}
   - component: {fileID: 7907518860947371988}
+  - component: {fileID: 3445222872704894387}
   m_Layer: 7
   m_Name: SmallWall
   m_TagString: Wall
@@ -99,22 +99,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7907518860947371992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7907518860947371994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91f145dd1ae8b2149a16a8a7a75e8ef4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wallType: 0
-  wallModel: {fileID: 0}
-  wallController: {fileID: 0}
-  gameView: {fileID: 0}
 --- !u!54 &7907518860947371988
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -131,3 +115,16 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &3445222872704894387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7907518860947371994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb1e95fc192fb24dbf16c808081e30c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallType: 0

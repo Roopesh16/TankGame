@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace TankGame.Wall
 {
+    [Serializable]
     public struct WallData
     {
         public int levelNumber;
@@ -17,7 +19,7 @@ namespace TankGame.Wall
 
         public WallService(List<WallData> levelWallList)
         {
-            wallController = new();
+            wallController = new WallController();
             this.levelWallList = levelWallList;
         }
 

@@ -22,6 +22,7 @@ namespace TankGame.Cameras
         {
             offset = transform.position - tank.position;
         }
+
         void LateUpdate()
         {
             if (tankService.GetTankState() == TankState.MOVING)

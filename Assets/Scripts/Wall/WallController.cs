@@ -1,9 +1,9 @@
+using Assets.Scripts.UI;
 using System.Collections.Generic;
 using TankGame.Audio;
 using TankGame.Cameras;
 using TankGame.Levels;
 using TankGame.Main;
-using TankGame.UI;
 using UnityEngine;
 
 namespace TankGame.Wall
@@ -13,16 +13,20 @@ namespace TankGame.Wall
         private WallModel wallModel;
         private List<WallView> walls = new List<WallView>();
         private int currentWall = 0;
-        private int currentMaxWalls;
+        private int currentMaxWalls = 0;
         private const int LEVEL_ONE = 1;
         private const int LEVEL_FOUR = 4;
 
         private MoveCamController moveCamController;
         private LevelService levelService => GameService.Instance.LevelService;
         private AudioService audioService => GameService.Instance.AudioService;
-        private UIService uIService => GameService.Instance.UIService;
+        private GameplayUIService gameplayUIService => GameService.Instance.GameplayUIService;
 
-        public WallController() => wallModel.SetController(this);
+        public WallController()
+        {
+            wallModel = new();
+            wallModel.SetController(this);
+        }
 
         public void SetWallController(List<WallView> walls)
         {
@@ -34,10 +38,12 @@ namespace TankGame.Wall
 
         public void UpdateWallCount()
         {
-            if (currentWall < currentMaxWalls)
-                currentWall++;
-            else
+            if (currentWall >= walls.Count)
+            {
                 levelService.OnLevelComplete();
+            }
+            else
+                currentWall++;
         }
 
         public void DisableWall(WallView wallView, GameObject other)
@@ -45,7 +51,7 @@ namespace TankGame.Wall
             if (other.tag == GameStrings.BULLET_STRING)
             {
                 audioService.PlaySFX(AudioSFX.WALL_BREAK, 0.5f);
-                uIService.SetScoreText(wallView.WallPoint);
+                gameplayUIService.SetScoreText(wallView.WallPoint);
                 wallView.gameObject.SetActive(false);
                 other.SetActive(false);
                 if (wallView.WallType == WallType.SMALL && levelService.GetLevel() == LEVEL_ONE)

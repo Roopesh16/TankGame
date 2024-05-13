@@ -345,6 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ba20f587b9f624ab98fe3780ee5312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunView: {fileID: 6080606308359304171}
   blastPosition: {fileID: 8716662834948033047}
   blastParticle: {fileID: 198917022394846920, guid: e1b08032bec16ba4eb1ae23cbd572664,
     type: 3}
