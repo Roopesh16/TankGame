@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
-using TankGame.Audio;
+﻿using TankGame.Audio;
+using TankGame.Events;
 using TankGame.Main;
 using TankGame.Managers;
+using TankGame.States;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -30,12 +31,12 @@ namespace TankGame.UI
         [SerializeField] private Button infoBackBtn;
         [SerializeField] private Button aboutButton;
         [SerializeField] private Button aboutBackBtn;
-        [SerializeField] private List<Button> levelButtons = new List<Button>();
 
         private int maxLevel = 5;
         private int totalScore = 0;
-        private const string scoreString = "SCORE : ";
+
         private AudioService audioService => GameService.Instance.AudioService;
+        private EventService eventService => GameService.Instance.EventService;
 
         private void Awake()
         {
@@ -44,18 +45,22 @@ namespace TankGame.UI
             infoBackBtn.onClick.AddListener(InfoBackButton);
             aboutButton.onClick.AddListener(AboutButton);
             aboutBackBtn.onClick.AddListener(AboutBackButton);
-            foreach (Button level in levelButtons)
-            {
-                level.interactable = false;
-            }
-            UnlockLevel();
+            SubscribeToEvents();
         }
 
         private void Start()
         {
             audioService.PlayBGM(AudioBGM.THEME);
+            GameManager.Instance.SetGameState(GameState.MENU);
             titleScreen.SetActive(true);
             menuScreen.SetActive(false);
+        }
+
+        private void SubscribeToEvents()
+        {
+            eventService.OnLevelStart.AddListener(SetMineInfo);
+            eventService.OnGameOver.AddListener(SetGameOverText);
+            eventService.OnLevelComplete.AddListener(SetLevelCompleteText);
         }
 
         private void PlayButton()
@@ -88,68 +93,27 @@ namespace TankGame.UI
             aboutScreen.SetActive(false);
         }
 
-        public void UnlockLevel()
-        {
-            if (GameManager.Instance.GetUnlockedLevel() <= 5)
-            {
-                for (int i = 0; i < GameManager.Instance.GetUnlockedLevel(); i++)
-                {
-                    if (levelButtons[i].IsInteractable() == false)
-                    {
-                        levelButtons[i].interactable = true;
-                    }
-                }
-            }
-            else
-            {
-                UnlockAllLevel();
-            }
-        }
-
-        public void UnlockAllLevel()
-        {
-            for (int i = 0; i < maxLevel; i++)
-            {
-                levelButtons[i].interactable = true;
-            }
-        }
-
         public void SetScoreText(int score)
         {
             totalScore += score;
             scoreText.text = scoreString + totalScore;
         }
 
-        public void DisplayMineInfo()
-        {
-            mineInfo.SetActive(true);
-        }
+        public void SetMineInfo(bool isActive) => mineInfo.SetActive(isActive);
 
-        public void HideMineInfo()
-        {
-            mineInfo.SetActive(false);
-        }
-
-        public void OnGameStart()
-        {
-            mineInfo.SetActive(false);
-        }
-        public void OnGameOver()
+        public void SetGameOverText()
         {
             goScoreText.text = totalScore.ToString();
             gameOver.SetActive(true);
         }
 
-        public void OnLevelComplete()
+        public void SetLevelCompleteText()
         {
             lcScoreText.text = totalScore.ToString();
             levelComplete.SetActive(true);
         }
 
-        public void MenuButton()
-        {
-            SceneManager.LoadScene(GameStrings.menuSceneString);
-        }
+        public void MenuButton() => SceneManager.LoadScene(GameStrings.MENU_STRING);
 
         public void ReloadScene()
         {
