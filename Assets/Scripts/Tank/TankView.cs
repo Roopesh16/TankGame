@@ -7,7 +7,6 @@ namespace TankGame.Tank
     {
         #region ------------ Serialize Variables ------------
         [Header("References")]
-        [SerializeField] private Transform startingPosition;
         [SerializeField] private Transform blastPosition;
         [SerializeField] private ParticleSystem blastParticle;
         [SerializeField] private float rotationSpeed = 60f;
@@ -45,7 +44,6 @@ namespace TankGame.Tank
         {
             tankController.SetAudio(Audio.AudioBGM.TANK_IDLE, 0.8f);
             tankAnim.SetBool("IsMove", false);
-            transform.localPosition = startingPosition.position;
         }
 
         public void SetHitPosition(Vector3 hitPosition)
