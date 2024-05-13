@@ -20,12 +20,12 @@ namespace TankGame.Tank
         #region ------------ Private Variables ------------
         private GameObject bullet;
         private RaycastHit wallHit;
+        private bool canFire = false;
         private TankService tankService => GameService.Instance.TankService;
         private AudioService audioService => GameService.Instance.AudioService;
         #endregion------------------------
 
         #region ------------ Public Variables ------------
-        [HideInInspector] public bool canFire = false;
         #endregion------------------------
 
         #region ------------ Monobehavior Methods ------------
