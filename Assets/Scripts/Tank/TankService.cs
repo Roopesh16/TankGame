@@ -7,22 +7,16 @@ namespace TankGame.Tank
         private TankState tankState;
         private TankController tankController;
 
-        public TankService(TankView tankView)
+        public TankService(TankView tankView, GunView gunView)
         {
             tankState = TankState.REST;
-            tankController = new TankController(tankView);
+            tankController = new TankController(tankView, gunView);
         }
 
-        public TankState GetTankState()
-        {
-            return this.tankState;
-        }
+        public TankState GetTankState() => tankState;
 
-        public void SetTankState(TankState tankState)
-        {
-            this.tankState = tankState;
-        }
+        public void SetTankState(TankState tankState) => this.tankState = tankState;
 
-        public void MoveTank(Vector3 hitPosition) => tankController.MoveTank(hitPosition);
+        public void MoveTank(Vector3 hitPosition) => tankController.SetTankPosition(hitPosition);
     }
 }
