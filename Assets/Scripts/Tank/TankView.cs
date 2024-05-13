@@ -7,6 +7,7 @@ namespace TankGame.Tank
     {
         #region ------------ Serialize Variables ------------
         [Header("References")]
+        [SerializeField] private GunView gunView;
         [SerializeField] private Transform blastPosition;
         [SerializeField] private ParticleSystem blastParticle;
         [SerializeField] private float rotationSpeed = 60f;
@@ -18,6 +19,7 @@ namespace TankGame.Tank
         public Animator Animator => tankAnim;
         public Vector3 HitPosition => hitPosition;
         public float RotationSpeed => rotationSpeed;
+        public GunView Gun => gunView;
         #endregion------------------------
 
         #region ------------ Private Variables ------------

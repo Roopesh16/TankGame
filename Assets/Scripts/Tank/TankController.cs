@@ -11,7 +11,6 @@ namespace TankGame.Tank
         #region ------------ Serialize Variables ------------
         private TankView tankView;
         private TankModel tankModel;
-        private GunView gunView;
         #endregion------------------------
 
         #region ------------ Private Variables ------------
@@ -37,9 +36,8 @@ namespace TankGame.Tank
         #endregion------------------------
 
         #region ------------ Public Methods ------------
-        public TankController(TankView tankView, GunView gunView)
+        public TankController(TankView tankView)
         {
-            this.gunView = gunView;
             InstantiateView(tankView);
             InstantiateModel();
         }
@@ -64,10 +62,10 @@ namespace TankGame.Tank
                 tankView.Agent.isStopped = true;
                 tankView.ToggleMove(false);
 
-                if (gunView.IsWallPresent())
+                if (tankView.Gun.IsWallPresent())
                 {
                     SetTankState(TankState.FIRE);
-                    gunView.FireBullet();
+                    tankView.Gun.FireBullet();
                 }
 
                 tankView.Animator.SetBool("IsMove", false);
