@@ -1,8 +1,9 @@
 using TankGame.Audio;
 using TankGame.Cameras;
+using TankGame.Levels;
 using TankGame.Main;
-using TankGame.Managers;
 using TankGame.Models;
+using TankGame.UI;
 using UnityEngine;
 
 namespace TankGame.Wall
@@ -19,6 +20,8 @@ namespace TankGame.Wall
         #region ------------ Private Variables ------------
         private int wallScore;
         private AudioService audioService => GameService.Instance.AudioService;
+        private UIService uIService => GameService.Instance.UIService;
+        private LevelService levelService => GameService.Instance.LevelService;
         #endregion------------------------
 
         #region ------------ Public Methods ------------
@@ -34,14 +37,14 @@ namespace TankGame.Wall
             if (other.tag == GameStrings.BULLET_STRING)
             {
                 audioService.PlaySFX(AudioSFX.WALL_BREAK, 0.5f);
-                //gameView.SetScoreText(wallScore);
+                uIService.SetScoreText(wallScore);
                 other.gameObject.SetActive(false);
                 gameObject.SetActive(false);
-                if (wallType == WallType.SMALL && GameManager.Instance.GetLevel() == 49)
+                if (wallType == WallType.SMALL && levelService.GetLevel() == 49)
                 {
                     moveCamController.ShowMineInfo();
                 }
-                if (wallType == WallType.SMALL && GameManager.Instance.GetLevel() == 52)
+                if (wallType == WallType.SMALL && levelService.GetLevel() == 52)
                 {
                     moveCamController.ShowMineInfo();
                 }
