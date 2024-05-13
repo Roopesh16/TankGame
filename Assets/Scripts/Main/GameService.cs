@@ -19,7 +19,6 @@ namespace TankGame.Main
 
         [Header("Tank Service")]
         [SerializeField] private TankView tankPrefab;
-        [SerializeField] private GunView gunView;
 
         [Header("UI Service")]
         [SerializeField] private UIService uiService;
@@ -63,7 +62,7 @@ namespace TankGame.Main
         {
             EventService = new EventService();
             InputService = new InputService(maxHitDistance);
-            TankService = new TankService(tankPrefab, gunView);
+            TankService = new TankService(tankPrefab);
             AudioService = new AudioService(sfxSource, bgmSource, sfxList, bgmList);
             LevelService = new LevelService(loadingCanvas, progressBar, levelButtons);
             WallService = new WallService(levelWallList);

@@ -7,10 +7,10 @@ namespace TankGame.Tank
         private TankState tankState;
         private TankController tankController;
 
-        public TankService(TankView tankView, GunView gunView)
+        public TankService(TankView tankView)
         {
             tankState = TankState.REST;
-            tankController = new TankController(tankView, gunView);
+            tankController = new TankController(tankView);
         }
 
         public TankState GetTankState() => tankState;
