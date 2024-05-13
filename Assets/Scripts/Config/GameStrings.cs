@@ -5,4 +5,5 @@ public static class GameStrings
     public const string BASE_STRING = "Base";
     public const string MENU_STRING = "MenuScene";
     public const string LEVEL_STRING = "Level";
+    private const string SCORE_STRING = "SCORE : ";
 }
